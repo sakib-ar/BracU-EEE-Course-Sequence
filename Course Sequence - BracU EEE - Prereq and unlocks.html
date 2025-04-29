@@ -35,6 +35,9 @@
         td {
             padding: 20px;
         }
+	.strikethrough {
+        text-decoration: line-through;
+        }
 	.legend {
       border: 1px solid #000;
       padding: 5px 5px;
@@ -79,88 +82,88 @@
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y1" class="course"><b>1<sup>st</sup> Year</b></td>
         <td id="s1" class="course"><b>1<sup>st</sup><br>Semester</b></td>
-        <td id="c1" class="course" poreq="c9">ENG101</td>
-        <td id="c2" class="course" poreq="c5,c6">MAT110</td>
-        <td id="c3" class="course" poreq="c5,c7">PHY111</td>
-        <td colspan ="2" id="c4" class="course">CHE110</td>
+        <td onclick="toggleStrikethrough(this)" id="c1" class="course" poreq="c9">ENG101</td>
+        <td onclick="toggleStrikethrough(this)" id="c2" class="course" poreq="c5,c6">MAT110</td>
+        <td onclick="toggleStrikethrough(this)" id="c3" class="course" poreq="c5,c7">PHY111</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c4" class="course">CHE110</td>
     </tr>
     <tr>
         <td id="s2" class="course"><b>2<sup>nd</sup><br>Semester</b></td>
-        <td id="c5" class="course" preq="c2,c3" poreq="c13">EEE101<br>EEE101L</td>
-        <td id="c6" class="course" preq="c2" poreq="c13,c18,c20">MAT120<br>MAT120IL</td>
-        <td id="c7" class="course" preq="c3" poreq="c21">PHY112<br>PHY112IL</td>
-        <td colspan ="2" id="c8" class="course" poreq="c20,c35,c39">EEE103<br>EEE103IL</td>
+        <td onclick="toggleStrikethrough(this)" id="c5" class="course" preq="c2,c3" poreq="c13">EEE101<br>EEE101L</td>
+        <td onclick="toggleStrikethrough(this)" id="c6" class="course" preq="c2" poreq="c13,c18,c20">MAT120<br>MAT120IL</td>
+        <td onclick="toggleStrikethrough(this)" id="c7" class="course" preq="c3" poreq="c21">PHY112<br>PHY112IL</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c8" class="course" poreq="c20,c35,c39">EEE103<br>EEE103IL</td>
     </tr>
     <tr>
         <td id="s3" class="course"><b>3<sup>rd</sup><br>Semester (RS)</b></td>
-        <td id="c9" class="course" preq="c1" poreq="c28,c31">ENG102</td>
-        <td id="c10" class="course" poreq="c28,c31">HUM103</td>
-        <td id="c11" class="course">EMB101</td>
-        <td colspan ="2" id="c12" class="course">BNG103</td>
+        <td onclick="toggleStrikethrough(this)" id="c9" class="course" preq="c1" poreq="c28,c31">ENG102</td>
+        <td onclick="toggleStrikethrough(this)" id="c10" class="course" poreq="c28,c31">HUM103</td>
+        <td onclick="toggleStrikethrough(this)" id="c11" class="course">EMB101</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c12" class="course">BNG103</td>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y2" class="course"><b>2<sup>nd</sup> Year</b></td>
         <td id="s4" class="course"><b>4<sup>th</sup><br>Semester</b></td>
-        <td id="c13" class="course" preq="c5,c6" poreq="c17,c19,c21,c22">EEE203<br>EEE203L</td>
-        <td id="c14" class="course" preq="c18">MAT215</td>
-        <td id="c15" class="course" poreq="c39">STA201</td>
-        <td colspan ="2" id="c16" class="course">GED (Art, Humanities)</td>
+        <td onclick="toggleStrikethrough(this)" id="c13" class="course" preq="c5,c6" poreq="c17,c19,c21,c22">EEE203<br>EEE203L</td>
+        <td onclick="toggleStrikethrough(this)" id="c14" class="course" preq="c18">MAT215</td>
+        <td onclick="toggleStrikethrough(this)" id="c15" class="course" poreq="c39">STA201</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c16" class="course">GED (Art, Humanities)</td>
     </tr>
     <tr>
         <td id="s5" class="course"><b>5<sup>th</sup><br>Semester</b></td>
-        <td id="c17" class="course" preq="c13" poreq="c23,c26,c27">EEE205<br>EEE205L</td>
-        <td id="c18" class="course" preq="c6" poreq="c21,c22,c39">MAT216</td>
-        <td id="c19" class="course" preq="c13" poreq="c36">EEE221<br>EEE221L</td>
-        <td colspan ="2" id="c20" class="course" preq="c6,c8" poreq="c32,c34">EEE282</td>
+        <td onclick="toggleStrikethrough(this)" id="c17" class="course" preq="c13" poreq="c23,c26,c27">EEE205<br>EEE205L</td>
+        <td onclick="toggleStrikethrough(this)" id="c18" class="course" preq="c6" poreq="c21,c22,c39">MAT216</td>
+        <td onclick="toggleStrikethrough(this)" id="c19" class="course" preq="c13" poreq="c36">EEE221<br>EEE221L</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c20" class="course" preq="c6,c8" poreq="c32,c34">EEE282</td>
     </tr>
     <tr>
         <td id="s6" class="course"><b>6<sup>th</sup><br>Semester</b></td>
-        <td id="c21" class="course" preq="c7,c13,c18" poreq="c30">EEE241</td>
-        <td id="c22" class="course" preq="c13,c18" poreq="c25,c30,c34">EEE243</td>
-        <td id="c23" class="course" preq="c17" poreq="c35">EEE283<br>EEE283L</td>
-        <td colspan ="2" id="c24" class="course">GED (Social Science)</td>
+        <td onclick="toggleStrikethrough(this)" id="c21" class="course" preq="c7,c13,c18" poreq="c30">EEE241</td>
+        <td onclick="toggleStrikethrough(this)" id="c22" class="course" preq="c13,c18" poreq="c25,c30,c34">EEE243</td>
+        <td onclick="toggleStrikethrough(this)" id="c23" class="course" preq="c17" poreq="c35">EEE283<br>EEE283L</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c24" class="course">GED (Social Science)</td>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y3" class="course"><b>3<sup>rd</sup> Year</b></td>
         <td id="s7" class="course"><b>7<sup>th</sup><br>Semester</b></td>
-        <td id="c25" class="course" preq="c22" poreq="c32,c38">EEE305<br>EEE305L</td>
-        <td id="c26" class="course" preq="c17" poreq="c32,c33">EEE308<br>EEE308L</td>
-        <td id="c27" class="course" preq="c17">EEE309</td>
-        <td colspan ="2" id="c28" class="course" preq="c9,c28" poreq="c33,c36,c38">EEE359</td>
+        <td onclick="toggleStrikethrough(this)" id="c25" class="course" preq="c22" poreq="c32,c38">EEE305<br>EEE305L</td>
+        <td onclick="toggleStrikethrough(this)" id="c26" class="course" preq="c17" poreq="c32,c33">EEE308<br>EEE308L</td>
+        <td onclick="toggleStrikethrough(this)" id="c27" class="course" preq="c17">EEE309</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c28" class="course" preq="c9,c28" poreq="c33,c36,c38">EEE359</td>
     </tr>
     <tr>
         <td id="s8" class="course"><b>8<sup>th</sup><br>Semester</b></td>
-        <td id="c29" class="course" preq="c19" poreq="c36">EEE321<br>EEE321L</td>
-        <td id="c30" class="course" preq="c21,c22" poreq="c38">EEE341<br>EEE341L</td>
-        <td id="c31" class="course" preq="c9,c28" poreq="c36,c38">EEE369</td>
-        <td id="c32" class="course" preq="c20,c25,c26" poreq="c38">EEE382</td>
-        <td id="c33" class="course" preq="c26,c28" poreq="c38">EEE383</td>
+        <td onclick="toggleStrikethrough(this)" id="c29" class="course" preq="c19" poreq="c36">EEE321<br>EEE321L</td>
+        <td onclick="toggleStrikethrough(this)" id="c30" class="course" preq="c21,c22" poreq="c38">EEE341<br>EEE341L</td>
+        <td onclick="toggleStrikethrough(this)" id="c31" class="course" preq="c9,c28" poreq="c36,c38">EEE369</td>
+        <td onclick="toggleStrikethrough(this)" id="c32" class="course" preq="c20,c25,c26" poreq="c38">EEE382</td>
+        <td onclick="toggleStrikethrough(this)" id="c33" class="course" preq="c26,c28" poreq="c38">EEE383</td>
     </tr>
     <tr>
         <td id="s9" class="course"><b>9<sup>th</sup><br>Semester</b></td>
-        <td id="c34" class="course" preq="c20,c22" poreq="c38">EEE343<br>EEE343L</td>
-        <td id="c35" class="course" preq="c8,c23" poreq="c38">EEE373<br>EEE373L</td>
-        <td id="c36" class="course" preq="c28,c29,c31" poreq="c38">EEE384</td>
-        <td colspan ="2" id="c37" class="course">GED (ECST)</td>
+        <td onclick="toggleStrikethrough(this)" id="c34" class="course" preq="c20,c22" poreq="c38">EEE343<br>EEE343L</td>
+        <td onclick="toggleStrikethrough(this)" id="c35" class="course" preq="c8,c23" poreq="c38">EEE373<br>EEE373L</td>
+        <td onclick="toggleStrikethrough(this)" id="c36" class="course" preq="c28,c29,c31" poreq="c38">EEE384</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c37" class="course">GED (ECST)</td>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y4" class="course"><b>4<sup>th</sup> Year</b></td>
         <td id="s10" class="course"><b>10<sup>th</sup><br>Semester</b></td>
-        <td id="c38" class="course" preq="c25,c28,c30,c31,c34,c35" poreq="c42">EEE499P<br>[Semester 1]</td>
-        <td id="c39" class="course" preq="c8,c15,c18">EEE385</td>
-        <td id="c40" class="course">Program Elective I</td>
-        <td colspan ="2" id="c41" class="course">GED Open Elective (Art, Humanities / Social Science / ECST)</td>
+        <td onclick="toggleStrikethrough(this)" id="c38" class="course" preq="c25,c28,c30,c31,c34,c35" poreq="c42">EEE499P<br>[Semester 1]</td>
+        <td onclick="toggleStrikethrough(this)" id="c39" class="course" preq="c8,c15,c18">EEE385</td>
+        <td onclick="toggleStrikethrough(this)" id="c40" class="course">Program Elective I</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c41" class="course">GED Open Elective (Art, Humanities / Social Science / ECST)</td>
     </tr>
     <tr>
         <td id="s11" class="course"><b>11<sup>th</sup><br>Semester</b></td>
-        <td id="c42" class="course" preq="c38" poreq="c45">EEE499D<br>[Semester 2]</td>
-        <td id="c43" class="course">Program Elective II</td>
-        <td colspan ="3" id="c44" class="course">Program Elective III</td>
+        <td onclick="toggleStrikethrough(this)" id="c42" class="course" preq="c38" poreq="c45">EEE499D<br>[Semester 2]</td>
+        <td onclick="toggleStrikethrough(this)" id="c43" class="course">Program Elective II</td>
+        <td colspan ="3" onclick="toggleStrikethrough(this)" id="c44" class="course">Program Elective III</td>
     </tr>
     <tr>
         <td id="s12" class="course"><b>12<sup>th</sup><br>Semester</b></td>
-        <td colspan ="2" id="c45" class="course" preq="c42">EEE499C<br>[Semester 3]</td>
-        <td colspan ="3" id="c46" class="course">Program Elective IV</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c45" class="course" preq="c42">EEE499C<br>[Semester 3]</td>
+        <td colspan ="3" onclick="toggleStrikethrough(this)" id="c46" class="course">Program Elective IV</td>
     </tr>
 </table>
 <div class="legend">
@@ -174,7 +177,11 @@
 </div>
 
 <script>
-    document.querySelectorAll('.course').forEach(course => {
+		function toggleStrikethrough(cell) {
+			// Toggle the strikethrough class on the clicked cell
+			cell.classList.toggle('strikethrough');
+		}
+	document.querySelectorAll('.course').forEach(course => {
         course.addEventListener('mouseover', function() {
             const hardPrereqs = this.getAttribute('preq');
             const softPrereqs = this.getAttribute('poreq');
