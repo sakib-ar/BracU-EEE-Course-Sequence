@@ -13,3 +13,8 @@ BSEEE Version V3 Recommended Course Sequence (Student Intake from Spring 2020 an
   - **General Education (Gen-Ed)**: Courses that are part of the foundational education.
   - **Program Core Courses (EEE)**: The essential EEE courses that form the core of the program.
   - **Courses Outside Departments (COD)**: Additional courses available outside the primary department, known as COD.
+
+- **Strikethrough Feature**:
+  - Click on any course to toggle stirkethorugh effect in course sequence table.
+  - Click on any row to toggle the strikethrough effect in course list tables.
+  - Table headers remain unaffected by the strikethrough effect.
