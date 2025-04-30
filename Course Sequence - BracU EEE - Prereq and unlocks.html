@@ -21,11 +21,15 @@
         .soft-highlight {
             background-color: lightblue;
         }
+		
 	.table-container {
       display: flex;
       gap: 0px;
       align-items: flex-start;
       margin: 0px 250px;
+    }
+	tr.strikethrough {
+      text-decoration: line-through;
     }
     table {
             margin: 0px auto;
@@ -177,13 +181,15 @@
 </div>
 
 <h1 align = "center"><b><u>Course Info</u>:</b></h1><h2 align = "center"><b>Gen-Ed Courses (Mandatory):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788">
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
 	<tr>
 	<th>Course<br>Code</th>
 	<th>Course Name</th>
 	<th>Credit</th>
 	</tr>
-	
+</thead>
+<tbody>
 	<tr>
 	<td>ENG101</td>
 	<td>English Fundamentals</td>
@@ -266,17 +272,19 @@
 	<td align = "right" colspan = "2"><b>Total</b></td>
 	<td><b>39 Credit(s)</b></td>
 	</tr>
-	
+</tbody>	
 </table>
 
 <h2 align = "center"><b><br><br>Program Core Courses (EEE):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788">
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
 	<tr>
 	<th>Course<br>Code</th>
 	<th>Course Name</th>
 	<th>Credit</th>
 	</tr>
-	
+</thead>
+<tbody>
 	<tr>
 	<td>EEE101</td>
 	<td>Electrical Circuits I</td>
@@ -497,15 +505,17 @@
 	<td align = "right" colspan = "2"><b>Total</b></td>
 	<td><b>69 Credit(s)</b></td>
 	</tr>
-
+</tbody>
 </table>
 
 <h2 align = "center"><b><br>Course Outside Department (COD):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788">
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
 	<tr>
 	<th colspan = "3"><b>Arts, Humanities<br>(Minimum 1 course)</b></th>
 	</tr>
-	
+</thead>
+<tbody>
 	<tr>
 	<td>ENG113</td>
 	<td>Introduction to English Poetry</td>
@@ -550,14 +560,16 @@
 	<td>ARC294</td>
 	<td>Photography</td>
 	</tr>
-
+</tbody>
 </table>
 <br>
-<table border = 1 cellpadding = 2 bgcolor = "52b788">
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
 	<tr>
 	<th colspan = "3"><b>Social Sciences, Business<br>(Minimum 1 course)</b></th>
 	</tr>
-	
+</thead>
+<tbody>	
 	<tr>
 	<td>BUS201</td>
 	<td>Business and Human Communication</td>
@@ -602,15 +614,17 @@
 	<td>ANT351</td>
 	<td>Gender and Development</td>
 	</tr>
-
+</tbody>
 </table>
 
 <br>
-<table border = 1 cellpadding = 2 bgcolor = "52b788">
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
 	<tr>
 	<th colspan = "3"><b>Engaging Communities Seeking Transformation (ECST)<br>(Minimum 1 course)</b></th>
 	</tr>
-	
+</thead>
+<tbody>
 	<tr>
 	<td>CST301</td>
 	<td>For the Love of Food</td>
@@ -635,10 +649,27 @@
 	<td>CST305</td>
 	<td>Inhabiting and Building our World</td>
 	</tr>
-
+</tbody>
 </table>
 
 <script>
+    // Get all tables with the class "ClickandStrike"
+    const tables = document.querySelectorAll('.ClickandStrike');
+
+    // Loop through each table
+    tables.forEach(function(table) {
+      // Add event listener to each tbody
+      table.querySelector('tbody').addEventListener("click", function(event) {
+        const clickedRow = event.target.closest("tr");
+
+        // Check if the clicked element is a table row within the tbody
+        if (clickedRow && clickedRow.tagName === "TR") {
+          // Toggle the 'strikethrough' class on the clicked row
+          clickedRow.classList.toggle("strikethrough");
+        }
+      });
+    });
+
 		function toggleStrikethrough(cell) {
 			// Toggle the strikethrough class on the clicked cell
 			cell.classList.toggle('strikethrough');
