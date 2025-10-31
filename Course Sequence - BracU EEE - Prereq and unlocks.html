@@ -7,12 +7,28 @@
     <title>Course Seq - BracU EEE</title>
     <style>
         .course {
-            padding: 5px;
-            margin: 5px;
-            border: 2px solid black;
-            text-align: center;
-            width: 100px;
-        }
+        position: relative; /* This is required for positioning the tick mark */
+        padding: 5px;
+        margin: 5px;
+        border: 2px solid black;
+        text-align: center;
+        width: 100px;
+    }
+	
+		.tick-mark {
+        display: none; /* The tick is hidden by default */
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        font-size: 16px;
+        color: #006400; /* A dark green color */
+        font-weight: bold;
+		}
+
+		/* When a course cell has this class, its tick mark will become visible */
+		.prereqs-met .tick-mark {
+			display: block;
+		}
 
         .highlight {
             background-color: yellow;
@@ -81,26 +97,26 @@
     <tr bgcolor = "40916c">
         <th id="h1" class="course">YEAR</th>
         <th id="h2" class="course">SEMESTER</th>
-        <th colspan ="5" id="h3" class="course">RECOMMENDED COURSES</th>
+        <th colspan ="5" id="h3" class="course">RECOMMENDED COURSE SEQUENCE - EEE</th>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y1" class="course"><b>1<sup>st</sup> Year</b></td>
         <td id="s1" class="course"><b>1<sup>st</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c1" class="course" poreq="c9">ENG101</td>
+        <td onclick="toggleStrikethrough(this)" id="c1" class="course">ENG101</td>
         <td onclick="toggleStrikethrough(this)" id="c2" class="course" poreq="c5,c6">MAT110</td>
-        <td onclick="toggleStrikethrough(this)" id="c3" class="course" poreq="c5,c7">PHY111</td>
+        <td onclick="toggleStrikethrough(this)" id="c3" class="course" poreq="c5,c7">PHY111<br><b>PHY111IL</b></td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c4" class="course">CHE110</td>
     </tr>
     <tr>
         <td id="s2" class="course"><b>2<sup>nd</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c5" class="course" preq="c2,c3" poreq="c13">EEE101<br>EEE101L</td>
-        <td onclick="toggleStrikethrough(this)" id="c6" class="course" preq="c2" poreq="c13,c18,c20">MAT120<br>MAT120IL</td>
-        <td onclick="toggleStrikethrough(this)" id="c7" class="course" preq="c3" poreq="c21">PHY112<br>PHY112IL</td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c8" class="course" poreq="c20,c35,c39">EEE103<br>EEE103IL</td>
+        <td onclick="toggleStrikethrough(this)" id="c5" class="course" preq="c2,c3" poreq="c13">EEE101<br><b>EEE101L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c6" class="course" preq="c2" poreq="c13,c18,c20">MAT120<br><b>MAT120IL</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c7" class="course" preq="c3" poreq="c21">PHY112<br><b>PHY112IL</b><span class="tick-mark">&#10003;</span></td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c8" class="course" poreq="c20,c35,c39">EEE103<br><b>EEE103IL</b></td>
     </tr>
     <tr>
         <td id="s3" class="course"><b>3<sup>rd</sup><br>Semester (RS)</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c9" class="course" preq="c1" poreq="c28,c31">ENG102</td>
+        <td onclick="toggleStrikethrough(this)" id="c9" class="course" poreq="c28,c31">ENG102</td>
         <td onclick="toggleStrikethrough(this)" id="c10" class="course" poreq="c28,c31">HUM103</td>
         <td onclick="toggleStrikethrough(this)" id="c11" class="course">EMB101</td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c12" class="course">BNG103</td>
@@ -108,74 +124,74 @@
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y2" class="course"><b>2<sup>nd</sup> Year</b></td>
         <td id="s4" class="course"><b>4<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c13" class="course" preq="c5,c6" poreq="c17,c19,c21,c22">EEE203<br>EEE203L</td>
-        <td onclick="toggleStrikethrough(this)" id="c14" class="course" preq="c18">MAT215</td>
+        <td onclick="toggleStrikethrough(this)" id="c13" class="course" preq="c5,c6" poreq="c17,c19,c21,c22">EEE203<br><b>EEE203L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c14" class="course" preq="c18">MAT215<span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c15" class="course" poreq="c39">STA201</td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c16" class="course">GED (Art, Humanities)</td>
     </tr>
     <tr>
         <td id="s5" class="course"><b>5<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c17" class="course" preq="c13" poreq="c23,c26,c27">EEE205<br>EEE205L</td>
-        <td onclick="toggleStrikethrough(this)" id="c18" class="course" preq="c6" poreq="c21,c22,c39">MAT216</td>
-        <td onclick="toggleStrikethrough(this)" id="c19" class="course" preq="c13" poreq="c36">EEE221<br>EEE221L</td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c20" class="course" preq="c6,c8" poreq="c32,c34">EEE282</td>
+        <td onclick="toggleStrikethrough(this)" id="c17" class="course" preq="c13" poreq="c23,c26,c27">EEE205<br><b>EEE205L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c18" class="course" preq="c6" poreq="c14,c21,c22,c39">MAT216<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c19" class="course" preq="c13" poreq="c29">EEE221<br><b>EEE221L</b><span class="tick-mark">&#10003;</span></td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c20" class="course" preq="c6,c8" poreq="c32"><b>EEE282</b><span class="tick-mark">&#10003;</span></td>
     </tr>
     <tr>
         <td id="s6" class="course"><b>6<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c21" class="course" preq="c7,c13,c18" poreq="c30">EEE241</td>
-        <td onclick="toggleStrikethrough(this)" id="c22" class="course" preq="c13,c18" poreq="c25,c30,c34">EEE243</td>
-        <td onclick="toggleStrikethrough(this)" id="c23" class="course" preq="c17" poreq="c35">EEE283<br>EEE283L</td>
+        <td onclick="toggleStrikethrough(this)" id="c21" class="course" preq="c7,c13,c18" poreq="c30">EEE241<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c22" class="course" preq="c13,c18" poreq="c25,c30,c34">EEE243<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c23" class="course" preq="c17" poreq="c35">EEE283<br><b>EEE283L</b><span class="tick-mark">&#10003;</span></td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c24" class="course">GED (Social Science)</td>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y3" class="course"><b>3<sup>rd</sup> Year</b></td>
         <td id="s7" class="course"><b>7<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c25" class="course" preq="c22" poreq="c32,c38">EEE305<br>EEE305L</td>
-        <td onclick="toggleStrikethrough(this)" id="c26" class="course" preq="c17" poreq="c32,c33">EEE308<br>EEE308L</td>
-        <td onclick="toggleStrikethrough(this)" id="c27" class="course" preq="c17">EEE309</td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c28" class="course" preq="c9,c28" poreq="c33,c36,c38">EEE359</td>
+        <td onclick="toggleStrikethrough(this)" id="c25" class="course" preq="c22" poreq="c32,c38">EEE305<br><b>EEE305L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c26" class="course" preq="c17" poreq="c32,c33">EEE308<br><b>EEE308L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c27" class="course" preq="c17">EEE309<span class="tick-mark">&#10003;</span></td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c28" class="course" preq="c9,c10" poreq="c33,c36,c38">EEE359<span class="tick-mark">&#10003;</span></td>
     </tr>
     <tr>
         <td id="s8" class="course"><b>8<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c29" class="course" preq="c19" poreq="c36">EEE321<br>EEE321L</td>
-        <td onclick="toggleStrikethrough(this)" id="c30" class="course" preq="c21,c22" poreq="c38">EEE341<br>EEE341L</td>
-        <td onclick="toggleStrikethrough(this)" id="c31" class="course" preq="c9,c28" poreq="c36,c38">EEE369</td>
-        <td onclick="toggleStrikethrough(this)" id="c32" class="course" preq="c20,c25,c26" poreq="c38">EEE382</td>
-        <td onclick="toggleStrikethrough(this)" id="c33" class="course" preq="c26,c28" poreq="c38">EEE383</td>
+        <td onclick="toggleStrikethrough(this)" id="c29" class="course" preq="c19" poreq="c36,c38">EEE321<br><b>EEE321L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c30" class="course" preq="c21,c22" poreq="c38">EEE341<br><b>EEE341L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c31" class="course" preq="c9,c10" poreq="c36,c38">EEE369<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c32" class="course" preq="c20,c25,c26"><b>EEE382</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c33" class="course" preq="c26,c28"><b>EEE383</b><span class="tick-mark">&#10003;</span></td>
     </tr>
     <tr>
         <td id="s9" class="course"><b>9<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c34" class="course" preq="c20,c22" poreq="c38">EEE343<br>EEE343L</td>
-        <td onclick="toggleStrikethrough(this)" id="c35" class="course" preq="c8,c23" poreq="c38">EEE373<br>EEE373L</td>
-        <td onclick="toggleStrikethrough(this)" id="c36" class="course" preq="c28,c29,c31" poreq="c38">EEE384</td>
+        <td onclick="toggleStrikethrough(this)" id="c34" class="course" preq="c22" poreq="c38">EEE343<br><b>EEE343L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c35" class="course" preq="c8,c23" poreq="c38">EEE373<br><b>EEE373L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c36" class="course" preq="c28,c29,c31"><b>EEE384</b><span class="tick-mark">&#10003;</span></td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c37" class="course">GED (ECST)</td>
     </tr>
     <tr>
         <td rowspan = "3" bgcolor ="40916c" id="y4" class="course"><b>4<sup>th</sup> Year</b></td>
         <td id="s10" class="course"><b>10<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c38" class="course" preq="c25,c28,c29,c30,c31,c32,c33,c34,c35,c36" poreq="c42">EEE499P<br>[Semester 1]</td>
-        <td onclick="toggleStrikethrough(this)" id="c39" class="course" preq="c8,c15,c18">EEE385</td>
+        <td onclick="toggleStrikethrough(this)" id="c38" class="course" preq="c25,c28,c29,c30,c31,c34,c35" poreq="c42">EEE499P<br>[Semester 1]<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c39" class="course" preq="c8,c15,c18">EEE385<br><b>EEE385IL</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c40" class="course">Program Elective I</td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c41" class="course">GED Open Elective (Art, Humanities / Social Science / ECST)</td>
     </tr>
     <tr>
         <td id="s11" class="course"><b>11<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c42" class="course" preq="c38" poreq="c45">EEE499D<br>[Semester 2]</td>
+        <td onclick="toggleStrikethrough(this)" id="c42" class="course" preq="c38" poreq="c45">EEE499D<br>[Semester 2]<span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c43" class="course">Program Elective II</td>
         <td colspan ="3" onclick="toggleStrikethrough(this)" id="c44" class="course">Program Elective III</td>
     </tr>
     <tr>
         <td id="s12" class="course"><b>12<sup>th</sup><br>Semester</b></td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c45" class="course" preq="c42">EEE499C<br>[Semester 3]</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c45" class="course" preq="c42">EEE499C<br>[Semester 3]<span class="tick-mark">&#10003;</span></td>
         <td colspan ="3" onclick="toggleStrikethrough(this)" id="c46" class="course">Program Elective IV</td>
     </tr>
 </table>
-<div class="legend">
+<div class = "legend">
 	
-    <div class="legend-item">
-      <div class="color-box" style="background-color: #ffff00;"></div>Pre-requisite</div>
-    <div class="legend-item">
-      <div class="color-box" style="background-color: #add8e6;"></div>Unlocks</div>
+    <div class = "legend-item">
+      <div class = "color-box" style = "background-color: #ffff00;"></div>Pre-requisite</div>
+    <div class = "legend-item">
+      <div class = "color-box" style = "background-color: #add8e6;"></div>Unlocks (Full / Partial)</div>
 	
   </div>
 </div>
@@ -227,8 +243,8 @@
 	</tr>
 	
 	<tr>
-	<td>MAT120</td>
-	<td>Mathematics II: Integral Calculus and Differential Equations</td>
+	<td>MAT120<br><b>MAT120IL</b></td>
+	<td>Mathematics II: Integral Calculus and Differential Equations<br><i>with integrated-lab</i></td>
 	<td>3 Credit(s)</td>
 	</tr>
 	
@@ -245,14 +261,14 @@
 	</tr>
 	
 	<tr>
-	<td>PHY111</td>
-	<td>Principles of Physics I</td>
+	<td>PHY111<br><b>PHY111IL</b></td>
+	<td>Principles of Physics I<br><i>with integrated-lab</i></td>
 	<td>3 Credit(s)</td>
 	</tr>
 	
 	<tr>
-	<td>PHY112</td>
-	<td>Principles of Physics II</td>
+	<td>PHY112<br><b>PHY112IL</b></td>
+	<td>Principles of Physics II<br><i>with integrated-lab</i></td>
 	<td>3 Credit(s)</td>
 	</tr>
 	
@@ -286,57 +302,33 @@
 </thead>
 <tbody>
 	<tr>
-	<td>EEE101</td>
-	<td>Electrical Circuits I</td>
+	<td>EEE101<br><b>EEE101L</b></td>
+	<td>Electrical Circuits I<br>Electrical Circuits I Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
+	</tr>
+	
+	<tr>
+	<td>EEE103<br><b>EEE103IL</b></td>
+	<td>Computer Programming<br>Computer Programming Laboratory<i>(integrated lab)</i></td>
 	<td>3 Credit(s)</td>
 	</tr>
 	
 	<tr>
-	<td>EEE101L</td>
-	<td>Electrical Circuits I Laboratory</td>
-	<td>1 Credit</td>
+	<td>EEE203<br><b>EEE203L</b></td>
+	<td>Electrical Circuits II<br>Electrical Circuits II Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE103<br>EEE103IL</td>
-	<td>Computer Programming<br>Computer Programming Laboratory</td>
-	<td>3 Credit(s)</td>
+	<td>EEE205<br><b>EEE205L</b></td>
+	<td>Electronic Circuits I<br>Electronic Circuits I Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE203</td>
-	<td>Electrical Circuits II</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE203L</td>
-	<td>Electrical Circuits II Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE205</td>
-	<td>Electronic Circuit I</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE205L</td>
-	<td>Electronic Circuit I Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE221</td>
-	<td>Energy Conversion I</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE221L</td>
-	<td>Energy Conversion I Laboratory</td>
-	<td>1 Credit</td>
+	<td>EEE221<br><b>EEE221L</b></td>
+	<td>Energy Conversion I<br>Energy Conversion I Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
@@ -352,47 +344,29 @@
 	</tr>
 	
 	<tr>
-	<td>EEE282</td>
+	<td><b>EEE282</b></td>
 	<td>Numerical Techniques</td>
 	<td>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE283</td>
-	<td>Digital Logic Design</td>
-	<td>3 Credit(s)</td>
+	<td>EEE283<br><b>EEE283L</b></td>
+	<td>Digital Logic Design<br>Digital Logic Design Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE283L</td>
-	<td>Digital Logic Design Laboratory</td>
-	<td>1 Credit</td>
+	<td>EEE305L<br><b>EEE305L</b></td>
+	<td>Control Systems<br>Control Systems Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE305</td>
-	<td>Control Systems</td>
-	<td>3 Credit(s)</td>
+	<td>EEE308<br><b>EEE308L</b></td>
+	<td>Electronic Circuits II<br>Electronic Circuits II Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
-	
-	<tr>
-	<td>EEE305L</td>
-	<td>Control Systems Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE308</td>
-	<td>Electronic Circuits II</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE308L</td>
-	<td>Electronic Circuits II Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
+
 	<tr>
 	<td>EEE309</td>
 	<td>Semiconductor Device Physics</td>
@@ -400,39 +374,21 @@
 	</tr>
 	
 	<tr>
-	<td>EEE321</td>
-	<td>Power System I</td>
-	<td>3 Credit(s)</td>
+	<td>EEE321<br><b>EEE321L</b></td>
+	<td>Power System I<br>Power System I Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
+	</tr>
+
+	<tr>
+	<td>EEE341<br><b>EEE341L</b></td>
+	<td>Introduction to Communication Engineering<br>Introduction to Communication Engineering Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE321L</td>
-	<td>Power System I Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE341</td>
-	<td>Introduction to Communication Engineering</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE341L</td>
-	<td>Introduction to Communication Engineering Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE343</td>
-	<td>Digital Signal Processing</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE343L</td>
-	<td>Digital Signal Processing Laboratory</td>
-	<td>1 Credit</td>
+	<td>EEE343<br><b>EEE343L</b></td>
+	<td>Digital Signal Processing<br>Digital Signal Processing Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
 	
 	<tr>
@@ -448,57 +404,33 @@
 	</tr>
 	
 	<tr>
-	<td>EEE373</td>
-	<td>Embedded Systems Design</td>
-	<td>3 Credit(s)</td>
+	<td>EEE373<br><b>EEE373L</b></td>
+	<td>Embedded Systems Design<br>Embedded Systems Design Laboratory</td>
+	<td>3 Credit(s)<br>1 Credit</td>
 	</tr>
-	
+
 	<tr>
-	<td>EEE373L</td>
-	<td>Embedded Systems Design Laboratory</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE382</td>
+	<td><b>EEE382</b></td>
 	<td>Modelling and Simulation</td>
 	<td>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE383</td>
+	<td><b>EEE383</b></td>
 	<td>Electronic System Design</td>
 	<td>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE384</td>
+	<td><b>EEE384</b></td>
 	<td>Electrical Service Design</td>
 	<td>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>EEE385<br>EEE385IL</td>
-	<td>Machine Learning<br>Machine Learning Laboratory</td>
+	<td>EEE385<br><b>EEE385IL</b></td>
+	<td>Machine Learning<br>Machine Learning Laboratory<i>(integrated lab)</i></td>
 	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE 499P</td>
-	<td>Final Year Design Project</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE 499D</td>
-	<td>Final Year Design Project</td>
-	<td>1.5 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE 499C</td>
-	<td>Final Year Design Project</td>
-	<td>1.5 Credit</td>
 	</tr>
 	
 	<tr>
@@ -508,57 +440,107 @@
 </tbody>
 </table>
 
-<h2 align = "center"><b><br>Course Outside Department (COD):</b></h2>
+<h2 align = "center"><b><br>Final Year Design Project - FYDP</b></h2>
 <table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
 <thead>
 	<tr>
-	<th colspan = "3"><b>Arts, Humanities<br>(Minimum 1 course)</b></th>
+	<th>Course<br>Code</th>
+	<th>Course Name</th>
+	<th>Credit</th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-	<td>ENG113</td>
-	<td>Introduction to English Poetry</td>
+	<td>EEE499P</td>
+	<td>Final Year Design Project</td>
+	<td>1 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>ENG114</td>
-	<td>Introduction to English Drama</td>
+	<td>EEE499D</td>
+	<td>Final Year Design Project</td>
+	<td>1.5 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>ENG115</td>
-	<td>Introduction to English Prose</td>
+	<td>EEE499C</td>
+	<td>Final Year Design Project</td>
+	<td>1.5 Credit</td>
 	</tr>
 	
 	<tr>
-	<td>HUM101</td>
-	<td>World Civilization and Culture</td>
+	<td align = "right" colspan = "2"><b>Total</b></td>
+	<td><b>4 Credit(s)</b></td>
+	</tr>
+</tbody>
+</table>
+
+<h2 align = "center"><b><br>Course Outside Department (COD):</b></h2>
+<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
+<thead>
+	<tr>
+	<th colspan = "3"><b>Arts, Humanities<br>(Minimum 1 course from this stream)</b></th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>ENG110</td>
+		<td>English for Life</td>
+	</tr>
+
+	<tr>
+		<td>ENG113</td>
+		<td>Introduction to English Poetry</td>
 	</tr>
 	
 	<tr>
-	<td>HUM102</td>
-	<td>Introduction to Philosophy</td>
+		<td>ENG114</td>
+		<td>Introduction to English Drama</td>
 	</tr>
 	
 	<tr>
-	<td>HST102</td>
-	<td>The Modern World</td>
+		<td>ENG115</td>
+		<td>Introduction to English Prose</td>
+	</tr>
+
+	<tr>
+		<td>ENG333</td>
+		<td>Globalization and the Media</td>
 	</tr>
 	
 	<tr>
-	<td>HST103</td>
-	<td>History of Bangladesh</td>
+		<td>HST102</td>
+		<td>The Modern World</td>
 	</tr>
 	
 	<tr>
-	<td>ARC122</td>
-	<td>History of Art and Architecture</td>
+		<td>HST103</td>
+		<td>History of Bangladesh</td>
+	</tr>
+
+	<tr>
+		<td>HST104</td>
+		<td>Global History Lab - A History of World since 1300</td>
 	</tr>
 	
 	<tr>
-	<td>ARC294</td>
-	<td>Photography</td>
+		<td>HUM101</td>
+		<td>World Civilization and Culture</td>
+	</tr>
+	
+	<tr>
+		<td>HUM102</td>
+		<td>Introduction to Philosophy</td>
+	</tr>
+
+	<tr>
+		<td>HUM207</td>
+		<td>Narratives of Truth and Lies</td>
+	</tr>
+
+	<tr>
+		<td>HUM210</td>
+		<td>Streaming Media Cultures</td>
 	</tr>
 </tbody>
 </table>
@@ -566,53 +548,123 @@
 <table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
 <thead>
 	<tr>
-	<th colspan = "3"><b>Social Sciences, Business<br>(Minimum 1 course)</b></th>
+	<th colspan = "3"><b>Social Sciences, Business<br>(Minimum 1 course from this stream)</b></th>
 	</tr>
 </thead>
 <tbody>	
 	<tr>
-	<td>BUS201</td>
-	<td>Business and Human Communication</td>
+		<td>ANT101</td>
+		<td>Introduction to Anthropology</td>
+	</tr>
+
+	<tr>
+		<td>ANT342</td>
+		<td>Body and Society</td>
 	</tr>
 	
 	<tr>
-	<td>ECO105</td>
-	<td>Fundamentals of Economics</td>
+		<td>ANT351</td>
+		<td>Gender and Development</td>
+	</tr>
+
+	<tr>
+		<td>BUS102</td>
+		<td>Business - Basics, Ethics and Environment</td>
+	</tr>
+
+	<tr>
+		<td>BUS201</td>
+		<td>Business and Human Communication</td>
+	</tr>
+
+	<tr>
+		<td>BUS333</td>
+		<td>Social Entrepreneurship Practicum</td>
+	</tr>
+
+	<tr>
+		<td>BUS334</td>
+		<td>Social Intrapreneurship Practicum - Leading Change</td>
+	</tr>
+
+	<tr>
+		<td>BUS335</td>
+		<td>Sustainable Development and Social Enterprise</td>
+	</tr>
+
+	<tr>
+		<td>DEV104</td>
+		<td>Foundations of International Development</td>
+	</tr>
+
+	<tr>
+		<td>DEV201</td>
+		<td>Health, Culture and Development</td>
+	</tr>
+
+	<tr>
+		<td>ECO101</td>
+		<td>Introduction to Microeconomics</td>
+	</tr>
+
+	<tr>
+		<td>ECO102</td>
+		<td>Introduction to Macroeconomics</td>
 	</tr>
 	
 	<tr>
-	<td>POL101</td>
-	<td>Introduction to Political Science</td>
+		<td>ECO105</td>
+		<td>Fundamentals of Economics</td>
 	</tr>
 	
 	<tr>
-	<td>ANT101</td>
-	<td>Introduction to Anthropology</td>
+		<td>POL101</td>
+		<td>Introduction to Political Science</td>
+	</tr>
+
+	<tr>
+		<td>POL102</td>
+		<td>Comparative Governance</td>
+	</tr>
+
+	<tr>
+		<td>POL103</td>
+		<td>International Relations and Global Politics</td>
+	</tr>
+
+	<tr>
+		<td>POL201</td>
+		<td>Introduction to Civic Engagement</td>
+	</tr>
+
+	<tr>
+		<td>POL202</td>
+		<td>Foundations in Public Policy</td>
+	</tr>
+
+	<tr>
+		<td>PSY101</td>
+		<td>Introduction to Psychology</td>
+	</tr>
+
+	<tr>
+		<td>PSY102</td>
+		<td>Understanding the Human Minds</td>
 	</tr>
 	
 	<tr>
-	<td>SOC101</td>
-	<td>Introduction to Sociology</td>
+		<td>SOC101</td>
+		<td>Introduction to Sociology</td>
 	</tr>
 	
 	<tr>
-	<td>PSY101</td>
-	<td>Introduction to Psychology</td>
+		<td>SOC201/<br>ANT202</td>
+		<td>Social Inequality</td>
 	</tr>
-	
+
 	<tr>
-	<td>SOC201/<br>ANT202</td>
-	<td>Social Inequality</td>
-	</tr>
-	
-	<tr>
-	<td>ANT342</td>
-	<td>Body and Society</td>
-	</tr>
-	
-	<tr>
-	<td>ANT351</td>
-	<td>Gender and Development</td>
+		<td>BU201</td>
+		<td>Community Engagement and Action</td>
 	</tr>
 </tbody>
 </table>
@@ -621,73 +673,140 @@
 <table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
 <thead>
 	<tr>
-	<th colspan = "3"><b>Engaging Communities Seeking Transformation (ECST)<br>(Minimum 1 course)</b></th>
+	<th colspan = "3"><b>Engaging Communities Seeking Transformation (ECST)<br>(Minimum 1 course from this stream)</b></th>
 	</tr>
 </thead>
 <tbody>
 	<tr>
-	<td>CST301</td>
-	<td>For the Love of Food</td>
+		<td>CST201</td>
+		<td>Luxury and Oppression in a Globalized World (of Perfumes)</td>
+	</tr>
+
+	<tr>
+		<td>CST204</td>
+		<td>Communication for Social Change</td>
+	</tr>
+
+	<tr>
+		<td>CST301</td>
+		<td>For the Love of Food</td>
 	</tr>
 	
 	<tr>
-	<td>CST302</td>
-	<td>The Pursuit of Wellbeing</td>
+		<td>CST302</td>
+		<td>The Pursuit of Wellbeing</td>
 	</tr>
 	
 	<tr>
-	<td>CST303</td>
-	<td>Law for Life, Peace and Justice</td>
+		<td>CST303</td>
+		<td>Law for Life, Peace and Justice</td>
 	</tr>
 	
 	<tr>
-	<td>CST304</td>
-	<td>Demystifying Documentaries: Truth, Ethics<br>and Storytelling in Non-Fiction Filmmaking</td>
+		<td>CST304</td>
+		<td>Documentary Film: Theory and Practice</td>
 	</tr>
 	
 	<tr>
-	<td>CST305</td>
-	<td>Inhabiting and Building our World</td>
+		<td>CST305</td>
+		<td>Borders and Beyond: Past and Future</td>
+	</tr>
+
+	<tr>
+		<td>CST306</td>
+		<td>Ethical Leadership</td>
+	</tr>
+
+	<tr>
+		<td>CST307</td>
+		<td>Art, Community and the Future</td>
+	</tr>
+
+	<tr>
+		<td>CST308</td>
+		<td>Social Dimensions of Faith and Development</td>
+	</tr>
+
+	<tr>
+		<td>CST309</td>
+		<td>Global Citizenship</td>
+	</tr>
+
+	<tr>
+		<td>CST310</td>
+		<td>Social Cohesion and Peace Building</td>
+	</tr>
+
+	<tr>
+		<td>CST314</td>
+		<td>Visual Storytelling: Understanding Society through Documentary Film</td>
+	</tr>
+
+	<tr>
+		<td>CST333</td>
+		<td>Personal Finance for Sustainable Economic Wellbeing</td>
 	</tr>
 </tbody>
 </table>
 
 <script>
-    // Get all tables with the class "ClickandStrike"
-    const tables = document.querySelectorAll('.ClickandStrike');
-
-    // Loop through each table
-    tables.forEach(function(table) {
-      // Add event listener to each tbody
-      table.querySelector('tbody').addEventListener("click", function(event) {
-        const clickedRow = event.target.closest("tr");
-
-        // Check if the clicked element is a table row within the tbody
-        if (clickedRow && clickedRow.tagName === "TR") {
-          // Toggle the 'strikethrough' class on the clicked row
-          clickedRow.classList.toggle("strikethrough");
-        }
-      });
+    // Strikethrough on lower tables
+    document.querySelectorAll('.ClickandStrike').forEach(function(table) {
+        table.querySelector('tbody').addEventListener("click", function(event) {
+            const clickedRow = event.target.closest("tr");
+            if (clickedRow && clickedRow.tagName === "TR") {
+                clickedRow.classList.toggle("strikethrough");
+            }
+        });
     });
 
-		function toggleStrikethrough(cell) {
-			// Toggle the strikethrough class on the clicked cell
-			cell.classList.toggle('strikethrough');
-		}
-	document.querySelectorAll('.course').forEach(course => {
+    /**
+     * Checks all courses to see if their prerequisites are met.
+     * If all 'preq' courses are struck through, it adds a class to show the tick mark.
+     */
+    function updatePrereqStatus() {
+        // Get all course cells that have a 'preq' attribute
+        document.querySelectorAll('td.course[preq]').forEach(courseCell => {
+            const prereqIds = courseCell.getAttribute('preq').split(',');
+
+            // Check if EVERY prerequisite course has the 'strikethrough' class
+            const allPrereqsMet = prereqIds.every(prereqId => {
+                const prereqElement = document.getElementById(prereqId.trim());
+                return prereqElement && prereqElement.classList.contains('strikethrough');
+            });
+
+            // Add or remove the 'prereqs-met' class based on the check
+            if (allPrereqsMet) {
+                courseCell.classList.add('prereqs-met');
+            } else {
+                courseCell.classList.remove('prereqs-met');
+            }
+        });
+    }
+
+    function toggleStrikethrough(cell) {
+        cell.classList.toggle('strikethrough');
+        updatePrereqStatus(); // Re-check all prerequisites after any change
+    }
+
+
+    //  Mouse hover highlighting
+    document.querySelectorAll('.course').forEach(course => {
         course.addEventListener('mouseover', function() {
             const hardPrereqs = this.getAttribute('preq');
             const softPrereqs = this.getAttribute('poreq');
-            
+
             if (hardPrereqs) {
                 hardPrereqs.split(',').forEach(prereqId => {
-                    document.getElementById(prereqId).classList.add('highlight');
+                    const el = document.getElementById(prereqId.trim());
+                    if (el) el.classList.add('highlight');
                 });
             }
-            
+
             if (softPrereqs) {
                 softPrereqs.split(',').forEach(prereqId => {
-                    document.getElementById(prereqId).classList.add('soft-highlight');
+                    const el = document.getElementById(prereqId.trim());
+                    if (el) el.classList.add('soft-highlight');
                 });
             }
         });
@@ -698,17 +817,22 @@
 
             if (hardPrereqs) {
                 hardPrereqs.split(',').forEach(prereqId => {
-                    document.getElementById(prereqId).classList.remove('highlight');
+                    const el = document.getElementById(prereqId.trim());
+                    if (el) el.classList.remove('highlight');
                 });
             }
 
             if (softPrereqs) {
                 softPrereqs.split(',').forEach(prereqId => {
-                    document.getElementById(prereqId).classList.remove('soft-highlight');
+                    const el = document.getElementById(prereqId.trim());
+                    if (el) el.classList.remove('soft-highlight');
                 });
             }
         });
     });
+
+    // Recommended: Run the check once when the page loads.
+    document.addEventListener('DOMContentLoaded', updatePrereqStatus);
 </script>
 
 </body>
