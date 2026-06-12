@@ -1,0 +1,159 @@
+.course {
+    position: relative; /* This is required for positioning the tick mark */
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid white;
+    text-align: center;
+    width: 100px;
+}
+
+    .tick-mark {
+    display: none; /* The tick is hidden by default */
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    }
+
+    /* When a course cell has this class, its tick mark will become visible */
+    .prereqs-met .tick-mark {
+        display: block;
+    }
+
+    .highlight {
+        background-color: yellow;
+        color: black;
+        animation: pulse 0.85s infinite ease-in-out;
+    }
+
+    .soft-highlight {
+        background-color:#25aa25;
+        color: black;
+        animation: pulse 0.75s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95); /* Starting size -> 95% of its size */
+      }
+      50% {
+        transform: scale(1); /* Grows to 100% of its size */
+      }
+      100% {
+        transform: scale(0.95); /* Shrinks back down */
+      }
+    }
+    
+.table-container {
+  display: flex;
+  gap: 0px;
+  align-items: flex-start;
+  margin: 0px 250px;
+  color: white;
+}
+
+tr.strikethrough {
+  text-decoration: line-through;
+}
+
+table {
+        margin: 0px auto;
+        border-collapse: collapse;
+    }
+
+    td {
+        padding: 20px;
+    }
+
+.strikethrough {
+    text-decoration: line-through;
+    }
+
+.legend {
+  border: 1px solid #fff;
+  padding: 5px 5px;
+  background-color: #0d1940;
+  font-family: sans-serif;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #000;
+}
+
+/* ADD-ONS */
+
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.course-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  color: white;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.course-box.eee-core:hover {
+  background-color: #198c3b;
+}
+
+.course-box.gened-mandatory:hover {
+  background-color: #c04747;
+}
+
+.course-box.stream-3:hover {
+  background-color: #886c1e;
+}
+
+.course-box.stream-4:hover {
+  background-color: #304889;
+}
+
+.course-box.stream-5:hover {
+  background-color: #744893;
+}
+
+.course-code {
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.course-title {
+  margin: 4px 0;
+  font-size: 0.9em;
+}
+
+.course-hp {
+  font-size: 0.8em;
+  color: #999;
+  margin: 4px 0;
+}
+
+/* Responsive fallback for smaller screens */
+@media (max-width: 1000px) {
+  .course-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
