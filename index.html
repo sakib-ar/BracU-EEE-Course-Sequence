@@ -5,84 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Seq - BracU EEE</title>
-    <style>
-        .course {
-        position: relative; /* This is required for positioning the tick mark */
-        padding: 5px;
-        margin: 5px;
-        border: 2px solid black;
-        text-align: center;
-        width: 100px;
-    }
-	
-		.tick-mark {
-        display: none; /* The tick is hidden by default */
-        position: absolute;
-        top: 2px;
-        right: 5px;
-        font-size: 16px;
-        color: #006400; /* A dark green color */
-        font-weight: bold;
-		}
-
-		/* When a course cell has this class, its tick mark will become visible */
-		.prereqs-met .tick-mark {
-			display: block;
-		}
-
-        .highlight {
-            background-color: yellow;
-        }
-
-        .soft-highlight {
-            background-color: lightblue;
-        }
-		
-	.table-container {
-      display: flex;
-      gap: 0px;
-      align-items: flex-start;
-      margin: 0px 250px;
-    }
-	tr.strikethrough {
-      text-decoration: line-through;
-    }
-    table {
-            margin: 0px auto;
-            border-collapse: collapse;
-        }
-
-        td {
-            padding: 20px;
-        }
-	.strikethrough {
-        text-decoration: line-through;
-        }
-	.legend {
-      border: 1px solid #000;
-      padding: 5px 5px;
-      background-color: #40916c;
-      font-family: sans-serif;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 5px;
-    }
-    .color-box {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      border: 1px solid #000;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <!-- c1=ENG101,c2=MAT110,c3=PHY111,c4=CHE110 -->
 <!-- c5=EEE101+EEE101L,c6=MAT120+MAT120IL,c7=PHY112+PHY112IL,c8=EEE103+EEE103IL -->
 <!-- c9=ENG102,c10=HUM103,c11=EMB101,c12=BNG103 -->
-<!-- c13=EEE203+EEE203L,c14=MAT215,c15=STA201,c16=GED(Arts,Humanities) -->
-<!-- c17=EEE205+EEE205L,c18=MAT216,c19=EEE221+EEE221L,c20=EEE282 -->
+<!-- c13=EEE203+EEE203L,c14=MAT216,c15=STA201,c16=GED(Arts,Humanities) -->
+<!-- c17=EEE205+EEE205L,c18=MAT215,c19=EEE221+EEE221L,c20=EEE282 -->
 <!-- c21=EEE241,c22=EEE243,c23=EEE283+EEE283L,c24=GED(Social Science) -->
 <!-- c25=EEE305+EEE305L,c26=EEE308+EEE308L,c27=EEE309,c28=EEE359-->
 <!-- c29=EEE321+321L,c30=EEE341+EEE341L,c31=EEE369,c32=EEE382,c33=EEE383 -->
@@ -91,16 +21,16 @@
 <!-- c42=EEE499D,c43=Program Elective II,c44=Program Elective III -->
 <!-- c45=EEE499C,c46=Program Elective IV -->
 
-<body bgcolor = "1b4332">
+<body bgcolor = "#010225">
 <div class="table-container">
-<table bgcolor = "52b788">
-    <tr bgcolor = "40916c">
+<table bgcolor = "#0d1940">
+    <tr bgcolor = "#03192d" >
         <th id="h1" class="course">YEAR</th>
         <th id="h2" class="course">SEMESTER</th>
         <th colspan ="5" id="h3" class="course">RECOMMENDED COURSE SEQUENCE - EEE</th>
     </tr>
     <tr>
-        <td rowspan = "3" bgcolor ="40916c" id="y1" class="course"><b>1<sup>st</sup> Year</b></td>
+        <td rowspan = "3" bgcolor ="#03192d" id="y1" class="course"><b>1<sup>st</sup> Year</b></td>
         <td id="s1" class="course"><b>1<sup>st</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c1" class="course">ENG101</td>
         <td onclick="toggleStrikethrough(this)" id="c2" class="course" poreq="c5,c6">MAT110</td>
@@ -110,7 +40,7 @@
     <tr>
         <td id="s2" class="course"><b>2<sup>nd</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c5" class="course" preq="c2,c3" poreq="c13">EEE101<br><b>EEE101L</b><span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c6" class="course" preq="c2" poreq="c13,c18,c20">MAT120<br><b>MAT120IL</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c6" class="course" preq="c2" poreq="c13,c14,c20">MAT120<br><b>MAT120IL</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c7" class="course" preq="c3" poreq="c21">PHY112<br><b>PHY112IL</b><span class="tick-mark">&#10003;</span></td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c8" class="course" poreq="c20,c35,c39">EEE103<br><b>EEE103IL</b></td>
     </tr>
@@ -122,29 +52,29 @@
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c12" class="course">BNG103</td>
     </tr>
     <tr>
-        <td rowspan = "3" bgcolor ="40916c" id="y2" class="course"><b>2<sup>nd</sup> Year</b></td>
+        <td rowspan = "3" bgcolor ="#03192d" id="y2" class="course"><b>2<sup>nd</sup> Year</b></td>
         <td id="s4" class="course"><b>4<sup>th</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c13" class="course" preq="c5,c6" poreq="c17,c19,c21,c22">EEE203<br><b>EEE203L</b><span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c14" class="course" preq="c18">MAT215<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c14" class="course" preq="c6" poreq="c18,c21,c22,c39">MAT216<span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c15" class="course" poreq="c39">STA201</td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c16" class="course">GED (Art, Humanities)</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c16" class="course">GED (Art, Humanities)<br>[GenEd Stream 3]</td>
     </tr>
     <tr>
         <td id="s5" class="course"><b>5<sup>th</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c17" class="course" preq="c13" poreq="c23,c26,c27">EEE205<br><b>EEE205L</b><span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c18" class="course" preq="c6" poreq="c14,c21,c22,c39">MAT216<span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c19" class="course" preq="c13" poreq="c29">EEE221<br><b>EEE221L</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c18" class="course" preq="c14">MAT215<span class="tick-mark">&#10003;</span></td>
+		<td onclick="toggleStrikethrough(this)" id="c19" class="course" preq="c13" poreq="c29">EEE221<br><b>EEE221L</b><span class="tick-mark">&#10003;</span></td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c20" class="course" preq="c6,c8" poreq="c32"><b>EEE282</b><span class="tick-mark">&#10003;</span></td>
     </tr>
     <tr>
         <td id="s6" class="course"><b>6<sup>th</sup><br>Semester</b></td>
-        <td onclick="toggleStrikethrough(this)" id="c21" class="course" preq="c7,c13,c18" poreq="c30">EEE241<span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c22" class="course" preq="c13,c18" poreq="c25,c30,c34">EEE243<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c21" class="course" preq="c7,c13,c14" poreq="c30">EEE241<span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c22" class="course" preq="c13,c14" poreq="c25,c30,c34">EEE243<span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c23" class="course" preq="c17" poreq="c35">EEE283<br><b>EEE283L</b><span class="tick-mark">&#10003;</span></td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c24" class="course">GED (Social Science)</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c24" class="course">GED (Social Science)<br>[GenEd Stream 4]</td>
     </tr>
     <tr>
-        <td rowspan = "3" bgcolor ="40916c" id="y3" class="course"><b>3<sup>rd</sup> Year</b></td>
+        <td rowspan = "3" bgcolor ="#03192d" id="y3" class="course"><b>3<sup>rd</sup> Year</b></td>
         <td id="s7" class="course"><b>7<sup>th</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c25" class="course" preq="c22" poreq="c32,c38">EEE305<br><b>EEE305L</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c26" class="course" preq="c17" poreq="c32,c33">EEE308<br><b>EEE308L</b><span class="tick-mark">&#10003;</span></td>
@@ -164,13 +94,13 @@
         <td onclick="toggleStrikethrough(this)" id="c34" class="course" preq="c22" poreq="c38">EEE343<br><b>EEE343L</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c35" class="course" preq="c8,c23" poreq="c38">EEE373<br><b>EEE373L</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c36" class="course" preq="c28,c29,c31"><b>EEE384</b><span class="tick-mark">&#10003;</span></td>
-        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c37" class="course">GED (ECST)</td>
+        <td colspan ="2" onclick="toggleStrikethrough(this)" id="c37" class="course">GED (ECST)<br>[GenEd Stream 5]</td>
     </tr>
     <tr>
-        <td rowspan = "3" bgcolor ="40916c" id="y4" class="course"><b>4<sup>th</sup> Year</b></td>
+        <td rowspan = "3" bgcolor ="#03192d" id="y4" class="course"><b>4<sup>th</sup> Year</b></td>
         <td id="s10" class="course"><b>10<sup>th</sup><br>Semester</b></td>
         <td onclick="toggleStrikethrough(this)" id="c38" class="course" preq="c25,c28,c29,c30,c31,c34,c35" poreq="c42">EEE499P<br>[Semester 1]<span class="tick-mark">&#10003;</span></td>
-        <td onclick="toggleStrikethrough(this)" id="c39" class="course" preq="c8,c15,c18">EEE385<br><b>EEE385IL</b><span class="tick-mark">&#10003;</span></td>
+        <td onclick="toggleStrikethrough(this)" id="c39" class="course" preq="c8,c15,c14">EEE385<br><b>EEE385IL</b><span class="tick-mark">&#10003;</span></td>
         <td onclick="toggleStrikethrough(this)" id="c40" class="course">Program Elective I</td>
         <td colspan ="2" onclick="toggleStrikethrough(this)" id="c41" class="course">GED Open Elective (Art, Humanities / Social Science / ECST)</td>
     </tr>
@@ -187,653 +117,573 @@
     </tr>
 </table>
 <div class = "legend">
-	
     <div class = "legend-item">
-      <div class = "color-box" style = "background-color: #ffff00;"></div>Pre-requisite</div>
+		<div class = "color-box" style = "background-color: yellow;"></div>Pre-requisite</div>
     <div class = "legend-item">
-      <div class = "color-box" style = "background-color: #add8e6;"></div>Unlocks (Full / Partial)</div>
-	
-  </div>
+		<div class = "color-box" style = "background-color: #25aa25;"></div>Unlocks (Full / Partial)</div>
+  	</div>
 </div>
-
-<h1 align = "center"><b><u>Course Info</u>:</b></h1><h2 align = "center"><b>Gen-Ed Courses (Mandatory):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th>Course<br>Code</th>
-	<th>Course Name</th>
-	<th>Credit</th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-	<td>ENG101</td>
-	<td>English Fundamentals</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>ENG102</td>
-	<td>English Composition I</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>HUM103</td>
-	<td>Ethics and Culture</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EMB101</td>
-	<td>Emergence of Bangladesh</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>BNG103</td>
-	<td>Bangla Language and Literature</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>MAT110</td>
-	<td>Mathematics I: Differential Calculus and Co-ordinate Geometry</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>MAT120<br><b>MAT120IL</b></td>
-	<td>Mathematics II: Integral Calculus and Differential Equations<br><i>with integrated-lab</i></td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>MAT215</td>
-	<td>Mathematics III: Complex Variables and Laplace Transformations</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>MAT216</td>
-	<td>Mathematics IV: Linear Algebra and Fourier Analysis</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>PHY111<br><b>PHY111IL</b></td>
-	<td>Principles of Physics I<br><i>with integrated-lab</i></td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>PHY112<br><b>PHY112IL</b></td>
-	<td>Principles of Physics II<br><i>with integrated-lab</i></td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>CHE110</td>
-	<td>Principles of Chemistry</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>STA201</td>
-	<td>Elements of Statistics and Probability</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td align = "right" colspan = "2"><b>Total</b></td>
-	<td><b>39 Credit(s)</b></td>
-	</tr>
-</tbody>	
-</table>
-
-<h2 align = "center"><b><br><br>Program Core Courses (EEE):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th>Course<br>Code</th>
-	<th>Course Name</th>
-	<th>Credit</th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-	<td>EEE101<br><b>EEE101L</b></td>
-	<td>Electrical Circuits I<br>Electrical Circuits I Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE103<br><b>EEE103IL</b></td>
-	<td>Computer Programming<br>Computer Programming Laboratory<i>(integrated lab)</i></td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE203<br><b>EEE203L</b></td>
-	<td>Electrical Circuits II<br>Electrical Circuits II Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE205<br><b>EEE205L</b></td>
-	<td>Electronic Circuits I<br>Electronic Circuits I Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE221<br><b>EEE221L</b></td>
-	<td>Energy Conversion I<br>Energy Conversion I Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE241</td>
-	<td>Electromagnetic Waves and Fields</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE243</td>
-	<td>Signals and Systems</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td><b>EEE282</b></td>
-	<td>Numerical Techniques</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE283<br><b>EEE283L</b></td>
-	<td>Digital Logic Design<br>Digital Logic Design Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE305L<br><b>EEE305L</b></td>
-	<td>Control Systems<br>Control Systems Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE308<br><b>EEE308L</b></td>
-	<td>Electronic Circuits II<br>Electronic Circuits II Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-
-	<tr>
-	<td>EEE309</td>
-	<td>Semiconductor Device Physics</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE321<br><b>EEE321L</b></td>
-	<td>Power System I<br>Power System I Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-
-	<tr>
-	<td>EEE341<br><b>EEE341L</b></td>
-	<td>Introduction to Communication Engineering<br>Introduction to Communication Engineering Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE343<br><b>EEE343L</b></td>
-	<td>Digital Signal Processing<br>Digital Signal Processing Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE359</td>
-	<td>Engineering Project Management</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE369</td>
-	<td>Professional Practice, Engineers and Society</td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td>EEE373<br><b>EEE373L</b></td>
-	<td>Embedded Systems Design<br>Embedded Systems Design Laboratory</td>
-	<td>3 Credit(s)<br>1 Credit</td>
-	</tr>
-
-	<tr>
-	<td><b>EEE382</b></td>
-	<td>Modelling and Simulation</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td><b>EEE383</b></td>
-	<td>Electronic System Design</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td><b>EEE384</b></td>
-	<td>Electrical Service Design</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE385<br><b>EEE385IL</b></td>
-	<td>Machine Learning<br>Machine Learning Laboratory<i>(integrated lab)</i></td>
-	<td>3 Credit(s)</td>
-	</tr>
-	
-	<tr>
-	<td align = "right" colspan = "2"><b>Total</b></td>
-	<td><b>69 Credit(s)</b></td>
-	</tr>
-</tbody>
-</table>
-
-<h2 align = "center"><b><br>Final Year Design Project - FYDP</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th>Course<br>Code</th>
-	<th>Course Name</th>
-	<th>Credit</th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-	<td>EEE499P</td>
-	<td>Final Year Design Project</td>
-	<td>1 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE499D</td>
-	<td>Final Year Design Project</td>
-	<td>1.5 Credit</td>
-	</tr>
-	
-	<tr>
-	<td>EEE499C</td>
-	<td>Final Year Design Project</td>
-	<td>1.5 Credit</td>
-	</tr>
-	
-	<tr>
-	<td align = "right" colspan = "2"><b>Total</b></td>
-	<td><b>4 Credit(s)</b></td>
-	</tr>
-</tbody>
-</table>
-
-<h2 align = "center"><b><br>Course Outside Department (COD):</b></h2>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th colspan = "3"><b>Arts, Humanities<br>(Minimum 1 course from this stream)</b></th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-		<td>ENG110</td>
-		<td>English for Life</td>
-	</tr>
-
-	<tr>
-		<td>ENG113</td>
-		<td>Introduction to English Poetry</td>
-	</tr>
-	
-	<tr>
-		<td>ENG114</td>
-		<td>Introduction to English Drama</td>
-	</tr>
-	
-	<tr>
-		<td>ENG115</td>
-		<td>Introduction to English Prose</td>
-	</tr>
-
-	<tr>
-		<td>ENG333</td>
-		<td>Globalization and the Media</td>
-	</tr>
-	
-	<tr>
-		<td>HST102</td>
-		<td>The Modern World</td>
-	</tr>
-	
-	<tr>
-		<td>HST103</td>
-		<td>History of Bangladesh</td>
-	</tr>
-
-	<tr>
-		<td>HST104</td>
-		<td>Global History Lab - A History of World since 1300</td>
-	</tr>
-	
-	<tr>
-		<td>HUM101</td>
-		<td>World Civilization and Culture</td>
-	</tr>
-	
-	<tr>
-		<td>HUM102</td>
-		<td>Introduction to Philosophy</td>
-	</tr>
-
-	<tr>
-		<td>HUM207</td>
-		<td>Narratives of Truth and Lies</td>
-	</tr>
-
-	<tr>
-		<td>HUM210</td>
-		<td>Streaming Media Cultures</td>
-	</tr>
-</tbody>
-</table>
+<p style = "color: #CCC">*Prerequisites are set as per the BRACU-CONNECT requirements</p>
 <br>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th colspan = "3"><b>Social Sciences, Business<br>(Minimum 1 course from this stream)</b></th>
-	</tr>
-</thead>
-<tbody>	
-	<tr>
-		<td>ANT101</td>
-		<td>Introduction to Anthropology</td>
-	</tr>
+<h1 align = "center" style = "color: white"><b>Program Core Courses (EEE):</b></h1>
+<div class="course-container">
+	<div class="course-box eee-core">
+		<p class="course-code">EEE101 + EEE101L</p>
+		<p class="course-title">Electrical Circuits I <br>Electrical Circuits I Laboratory</p>
+		<p class="course-hp">PreReq: MAT110, PHY111</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE103 + <i>EEE103IL</i></p>
+		<p class="course-title">Computer Programming <i>(with integrated-lab)</i></p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE203 + EEE203L</p>
+		<p class="course-title">Electrical Circuits II (EEE) <br>Electrical Circuits II Laboratory</p>
+		<p class="course-hp">PreReq: EEE101, EEE101L, MAT120</p>
+	</div>
 
-	<tr>
-		<td>ANT342</td>
-		<td>Body and Society</td>
-	</tr>
+	<div class="course-box eee-core">
+		<p class="course-code">EEE205 + EEE205L</p>
+		<p class="course-title">Electronic Circuits I <br>Electronic Circuits I Laboratory</p>
+		<p class="course-hp">PreReq: EEE203, EEE203L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE221 + EEE221L</p>
+		<p class="course-title">Energy Conversion I <br> Energy Conversion I Laboratory</p>
+		<p class="course-hp">PreReq: EEE203, EEE203L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE241</p>
+		<p class="course-title">Electromagnetic Waves and Fields</p>
+		<p class="course-hp">PreReq: EEE203, EEE203L, PHY112, MAT216</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE243</p>
+		<p class="course-title">Signals and Systems (EEE)</p>
+		<p class="course-hp">PreReq: MAT216, EEE203, EEE203L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE282</p>
+		<p class="course-title">Numerical Techniques</p>
+		<p class="course-hp">PreReq: EEE103, MAT120</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE283 + EEE283L</p>
+		<p class="course-title">Digital Logic Design <br> Digital Logic Design Laboratory</p>
+		<p class="course-hp">PreReq: EEE205, EEE205L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE305 + EEE305L</p>
+		<p class="course-title">Control Systems <br> Control Systems</p>
+		<p class="course-hp">PreReq: EEE243</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE308 + EEE308L</p>
+		<p class="course-title">Electronic Circuits II <br>Electronic Circuits II Laboratory</p>
+		<p class="course-hp">PreReq: EEE205, EEE205L</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE309</p>
+		<p class="course-title">Semiconductor Device Physics</p>
+		<p class="course-hp">PreReq: EEE205, EEE205L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE321 + EEE321L</p>
+		<p class="course-title">Power Systems I <br> Power Systems I Laboratory</p>
+		<p class="course-hp">PreReq: EEE221, EEE221L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE341 + EEE341L</p>
+		<p class="course-title">Introduction to Communication Engineering <br> Introduction to Communication Engineering Laboratory</p>
+		<p class="course-hp">PreReq: EEE241, EEE243</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE343 + EEE343L</p>
+		<p class="course-title">Digital Signal Processing (EEE) <br> Digital Signal Processing Laboratory</p>
+		<p class="course-hp">PreReq: EEE243</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE359</p>
+		<p class="course-title">Engineering Project Management</p>
+		<p class="course-hp">PreReq: ENG102, HUM103</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE369</p>
+		<p class="course-title">Professional Practice, Engineers and Society</p>
+		<p class="course-hp">PreReq: ENG102, HUM103</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE373 + EEE373L</p>
+		<p class="course-title">Embedded Systems Design <br> Embedded Systems Design Laboratory</p>
+		<p class="course-hp">PreReq: EEE103, EEE283, EEE283L</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE382</p>
+		<p class="course-title">Modelling and Simulation</p>
+		<p class="course-hp">PreReq: EEE282, EEE305, EEE305L, EEE308, EEE308L</p>
+	</div>
+
+	<div class="course-box eee-core">
+		<p class="course-code">EEE383</p>
+		<p class="course-title">Electronic System Design</p>
+		<p class="course-hp">PreReq: EEE308, EEE308L, EEE359</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE384</p>
+		<p class="course-title">Electrical Service Design</p>
+		<p class="course-hp">PreReq: EEE321, EEE321L, EEE359, EEE369</p>
+	</div>
+  
+	<div class="course-box eee-core">
+		<p class="course-code">EEE385 + <i>EEE385IL</i></p>
+		<p class="course-title">Machine Learning <i>(with integrated-lab)</i></p>
+		<p class="course-hp">PreReq: EEE103, MAT216, STA201</p>
+	</div>
+  </div>
+
+  <br>
+
+  <h1 align = "center" style = "color: white"><b>Final Year Design Project - FYDP</b></h1>
+	<div class="course-container">
+		<div class="course-box eee-core">
+			<p class="course-code">EEE499P</p>
+			<p class="course-title">Final Year Design Project<br>[Proposal]</p>
+			<p class="course-hp">PreReq: EEE305, EEE305L, EEE321, EEE321L, EEE341, EEE341L, EEE343, EEE343L, EEE359, EEE369, EEE373, EEE373L</p>
+		</div>
+
+		<div class="course-box eee-core">
+			<p class="course-code">EEE499D</p>
+			<p class="course-title">Final Year Design Project<br>[Design]</p>
+			<p class="course-hp">PreReq: EEE499P</p>
+		</div>
 	
-	<tr>
-		<td>ANT351</td>
-		<td>Gender and Development</td>
-	</tr>
+		<div class="course-box eee-core">
+			<p class="course-code">EEE499C</p>
+			<p class="course-title">Final Year Design Project<br>[Completition]</p>
+			<p class="course-hp">PreReq: EEE499D</p>
+		</div>
+	</div>
 
-	<tr>
-		<td>BUS102</td>
-		<td>Business - Basics, Ethics and Environment</td>
-	</tr>
+<br><br>
+<h1 align = "center" style = "color: white"><b><u>Non-Departmental Courses</u>:</b></h1>
+<h2 align = "center" style = "color: white"><b>Gen-Ed Courses (Mandatory):</b></h2>
 
-	<tr>
-		<td>BUS201</td>
-		<td>Business and Human Communication</td>
-	</tr>
+<div class="course-container">
+	<div class="course-box gened-mandatory">
+		<p class="course-code">ENG101</p>
+		<p class="course-title">English Fundamentals</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">ENG102</p>
+		<p class="course-title">English Composition I</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">HUM103</p>
+		<p class="course-title">Ethics and Culture</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
 
-	<tr>
-		<td>BUS333</td>
-		<td>Social Entrepreneurship Practicum</td>
-	</tr>
+	<div class="course-box gened-mandatory">
+		<p class="course-code">EMB101</p>
+		<p class="course-title">Emergence of Bangladesh</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">BNG103</p>
+		<p class="course-title">Bangla Language and Literature</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">MAT110</p>
+		<p class="course-title">Mathematics I: Differential Calculus and Co-ordinate Geometry</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
 
-	<tr>
-		<td>BUS334</td>
-		<td>Social Intrapreneurship Practicum - Leading Change</td>
-	</tr>
+	<div class="course-box gened-mandatory">
+		<p class="course-code">MAT120 + <i>MAT120IL</i></p>
+		<p class="course-title">Mathematics II: Integral Calculus and Differential Equations <i>(with integrated-lab)</i></p>
+		<p class="course-hp">PreReq: MAT110</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">MAT215</p>
+		<p class="course-title">Mathematics III: Complex Variables and Laplace Transformations</p>
+		<p class="course-hp">PreReq: MAT216</p>
+	</div>
 
-	<tr>
-		<td>BUS335</td>
-		<td>Sustainable Development and Social Enterprise</td>
-	</tr>
+	<div class="course-box gened-mandatory">
+		<p class="course-code">MAT216</p>
+		<p class="course-title">Mathematics IV: Linear Algebra and Fourier Analysis</p>
+		<p class="course-hp">PreReq: MAT120</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">PHY111 + <i>PHY111IL</i></p>
+		<p class="course-title">Principles of Physics I <i>(with integrated-lab)</i></p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">PHY112 + <i>PHY112IL</i></p>
+		<p class="course-title">Principles of Physics II <i>(with integrated-lab)</i></p>
+		<p class="course-hp">PreReq: PHY111</p>
+	</div>
 
-	<tr>
-		<td>DEV104</td>
-		<td>Foundations of International Development</td>
-	</tr>
+	<div class="course-box gened-mandatory">
+		<p class="course-code">STA201</p>
+		<p class="course-title">Elements of Statistics and Probability</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box gened-mandatory">
+		<p class="course-code">CHE110</p>
+		<p class="course-title">Principles of Chemistry</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  </div>
 
-	<tr>
-		<td>DEV201</td>
-		<td>Health, Culture and Development</td>
-	</tr>
+<h2 align = "center" style = "color: white"><b><br>Course Outside Department (COD):</b></h2>
+<h3 align = "center" style = "color: white"><b><br>Arts, Humanities [Stream 3]<br>(Minimum 1 course from this stream)</b></h3>
+<div class="course-container">
+	<div class="course-box stream-3">
+		<p class="course-code">ENG110</p>
+		<p class="course-title">English for Life</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">ENG113</p>
+		<p class="course-title">Introduction to English Poetry</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">ENG114</p>
+		<p class="course-title">Introduction to English Drama</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
 
-	<tr>
-		<td>ECO101</td>
-		<td>Introduction to Microeconomics</td>
-	</tr>
+	<div class="course-box stream-3">
+		<p class="course-code">ENG115</p>
+		<p class="course-title">Introduction English Prose</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">ENG333</p>
+		<p class="course-title">Globalization and the Media</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">HST102</p>
+		<p class="course-title">The Modern World</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
 
-	<tr>
-		<td>ECO102</td>
-		<td>Introduction to Macroeconomics</td>
-	</tr>
+	<div class="course-box stream-3">
+		<p class="course-code">HST103</p>
+		<p class="course-title">History of Bangladesh</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">HST104</p>
+		<p class="course-title">Global History Lab - A History of World since 1300</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+
+	<div class="course-box stream-3">
+		<p class="course-code">HUM101</p>
+		<p class="course-title">World Civilization & Culture</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">HUM102</p>
+		<p class="course-title">Introduction to Philosophy</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">HUM207</p>
+		<p class="course-title">Narratives of Truth and Lies</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+
+	<div class="course-box stream-3">
+		<p class="course-code">HUM210</p>
+		<p class="course-title">Streaming Media Cultures</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  
+	<div class="course-box stream-3">
+		<p class="course-code">HUM301</p>
+		<p class="course-title">In the Archives</p>
+		<p class="course-hp">PreReq: N/A</p>
+	</div>
+  </div>
+
+<h3 align = "center" style = "color: white"><b><br>Social Sciences, Business [Stream 4]
+	<br>(Minimum 1 course from this stream)</b></h3>
+	<div class="course-container">
+		<div class="course-box stream-4">
+			<p class="course-code">ANT101</p>
+			<p class="course-title">Introduction to Anthropology</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">ANT342</p>
+			<p class="course-title">Body and Society</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">ANT351</p>
+			<p class="course-title">Gender & Development</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>ECO105</td>
-		<td>Fundamentals of Economics</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">BUS102</p>
+			<p class="course-title">Business - Basics, Ethics and Environment</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">BUS201</p>
+			<p class="course-title">Business and Human Communication</p>
+			<p class="course-hp">PreReq: ENG102</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">BUS333</p>
+			<p class="course-title">Social Entrepreneurship Practicum</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">BUS335</p>
+			<p class="course-title">Sustainable Development and Social Enterprise</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>POL101</td>
-		<td>Introduction to Political Science</td>
-	</tr>
-
-	<tr>
-		<td>POL102</td>
-		<td>Comparative Governance</td>
-	</tr>
-
-	<tr>
-		<td>POL103</td>
-		<td>International Relations and Global Politics</td>
-	</tr>
-
-	<tr>
-		<td>POL201</td>
-		<td>Introduction to Civic Engagement</td>
-	</tr>
-
-	<tr>
-		<td>POL202</td>
-		<td>Foundations in Public Policy</td>
-	</tr>
-
-	<tr>
-		<td>PSY101</td>
-		<td>Introduction to Psychology</td>
-	</tr>
-
-	<tr>
-		<td>PSY102</td>
-		<td>Understanding the Human Minds</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">DEV104</p>
+			<p class="course-title">Foundations of International Development</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">DEV201</p>
+			<p class="course-title">Health, Culture and Development</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">ECO101</p>
+			<p class="course-title">Introduction to Microeconomics</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>SOC101</td>
-		<td>Introduction to Sociology</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">ECO102</p>
+			<p class="course-title">Introduction to  Macroeconomics</p>
+			<p class="course-hp">PreReq: ECO101</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">ECO105</p>
+			<p class="course-title">Introduction to Economics</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">POL101</p>
+			<p class="course-title">Introduction to Political Science</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>SOC201/<br>ANT202</td>
-		<td>Social Inequality</td>
-	</tr>
-
-	<tr>
-		<td>BU201</td>
-		<td>Community Engagement and Action</td>
-	</tr>
-</tbody>
-</table>
-
-<br>
-<table border = 1 cellpadding = 2 bgcolor = "52b788" class ="ClickandStrike">
-<thead>
-	<tr>
-	<th colspan = "3"><b>Engaging Communities Seeking Transformation (ECST)<br>(Minimum 1 course from this stream)</b></th>
-	</tr>
-</thead>
-<tbody>
-	<tr>
-		<td>CST201</td>
-		<td>Luxury and Oppression in a Globalized World (of Perfumes)</td>
-	</tr>
-
-	<tr>
-		<td>CST204</td>
-		<td>Communication for Social Change</td>
-	</tr>
-
-	<tr>
-		<td>CST301</td>
-		<td>For the Love of Food</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">POL102</p>
+			<p class="course-title">Comparative Governance</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">POL103</p>
+			<p class="course-title">International Relations and Global Politics</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>CST302</td>
-		<td>The Pursuit of Wellbeing</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">POL201</p>
+			<p class="course-title">Introduction to Civic Engagement</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">POL202</p>
+			<p class="course-title">Foundations in Public Policy</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">POL203</p>
+			<p class="course-title">Political Theory</p>
+			<p class="course-hp">PreReq: POL101</p>
+		</div>
 	
-	<tr>
-		<td>CST303</td>
-		<td>Law for Life, Peace and Justice</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">POL210</p>
+			<p class="course-title">Youth and Global Movement</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">PSY101</p>
+			<p class="course-title">Introduction to Psychology</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">PSY102</p>
+			<p class="course-title">Understanding the Human Minds</p>
+			<p class="course-hp">PreReq: PSY101</p>
+		</div>
 	
-	<tr>
-		<td>CST304</td>
-		<td>Documentary Film: Theory and Practice</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">SOC101</p>
+			<p class="course-title">Introduction to Sociology</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-4">
+			<p class="course-code">SOC201/ANT202</p>
+			<p class="course-title">Social Inequality</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
 	
-	<tr>
-		<td>CST305</td>
-		<td>Borders and Beyond: Past and Future</td>
-	</tr>
+		<div class="course-box stream-4">
+			<p class="course-code">BU201</p>
+			<p class="course-title">Community Engagement and Action</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  </div>
 
-	<tr>
-		<td>CST306</td>
-		<td>Ethical Leadership</td>
-	</tr>
-
-	<tr>
-		<td>CST307</td>
-		<td>Art, Community and the Future</td>
-	</tr>
-
-	<tr>
-		<td>CST308</td>
-		<td>Social Dimensions of Faith and Development</td>
-	</tr>
-
-	<tr>
-		<td>CST309</td>
-		<td>Global Citizenship</td>
-	</tr>
-
-	<tr>
-		<td>CST310</td>
-		<td>Social Cohesion and Peace Building</td>
-	</tr>
-
-	<tr>
-		<td>CST314</td>
-		<td>Visual Storytelling: Understanding Society through Documentary Film</td>
-	</tr>
-
-	<tr>
-		<td>CST333</td>
-		<td>Personal Finance for Sustainable Economic Wellbeing</td>
-	</tr>
-</tbody>
-</table>
-
-<script>
-    // Strikethrough on lower tables
-    document.querySelectorAll('.ClickandStrike').forEach(function(table) {
-        table.querySelector('tbody').addEventListener("click", function(event) {
-            const clickedRow = event.target.closest("tr");
-            if (clickedRow && clickedRow.tagName === "TR") {
-                clickedRow.classList.toggle("strikethrough");
-            }
-        });
-    });
-
-    /**
-     * Checks all courses to see if their prerequisites are met.
-     * If all 'preq' courses are struck through, it adds a class to show the tick mark.
-     */
-    function updatePrereqStatus() {
-        // Get all course cells that have a 'preq' attribute
-        document.querySelectorAll('td.course[preq]').forEach(courseCell => {
-            const prereqIds = courseCell.getAttribute('preq').split(',');
-
-            // Check if EVERY prerequisite course has the 'strikethrough' class
-            const allPrereqsMet = prereqIds.every(prereqId => {
-                const prereqElement = document.getElementById(prereqId.trim());
-                return prereqElement && prereqElement.classList.contains('strikethrough');
-            });
-
-            // Add or remove the 'prereqs-met' class based on the check
-            if (allPrereqsMet) {
-                courseCell.classList.add('prereqs-met');
-            } else {
-                courseCell.classList.remove('prereqs-met');
-            }
-        });
-    }
-
-    function toggleStrikethrough(cell) {
-        cell.classList.toggle('strikethrough');
-        updatePrereqStatus(); // Re-check all prerequisites after any change
-    }
-
-
-    //  Mouse hover highlighting
-    document.querySelectorAll('.course').forEach(course => {
-        course.addEventListener('mouseover', function() {
-            const hardPrereqs = this.getAttribute('preq');
-            const softPrereqs = this.getAttribute('poreq');
-
-            if (hardPrereqs) {
-                hardPrereqs.split(',').forEach(prereqId => {
-                    const el = document.getElementById(prereqId.trim());
-                    if (el) el.classList.add('highlight');
-                });
-            }
-
-            if (softPrereqs) {
-                softPrereqs.split(',').forEach(prereqId => {
-                    const el = document.getElementById(prereqId.trim());
-                    if (el) el.classList.add('soft-highlight');
-                });
-            }
-        });
-
-        course.addEventListener('mouseout', function() {
-            const hardPrereqs = this.getAttribute('preq');
-            const softPrereqs = this.getAttribute('poreq');
-
-            if (hardPrereqs) {
-                hardPrereqs.split(',').forEach(prereqId => {
-                    const el = document.getElementById(prereqId.trim());
-                    if (el) el.classList.remove('highlight');
-                });
-            }
-
-            if (softPrereqs) {
-                softPrereqs.split(',').forEach(prereqId => {
-                    const el = document.getElementById(prereqId.trim());
-                    if (el) el.classList.remove('soft-highlight');
-                });
-            }
-        });
-    });
-
-    // Recommended: Run the check once when the page loads.
-    document.addEventListener('DOMContentLoaded', updatePrereqStatus);
-</script>
-
+<h3 align = "center" style = "color: white"><b><br>Engaging Communities Seeking Transformation (ECST) [Stream 5]
+	<br>(Minimum 1 course from this stream)</b></h3>
+	<div class="course-container">
+		<div class="course-box stream-5">
+			<p class="course-code">CST201</p>
+			<p class="course-title">Luxury and Oppression in a Globalized World (of Perfumes)</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-5">
+			<p class="course-code">CST204</p>
+			<p class="course-title">Communication for Social Change</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  
+		<div class="course-box stream-5">
+			<p class="course-code">CST301</p>
+			<p class="course-title">For the Love of Food</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST302</p>
+			<p class="course-title">The Pursuit of Wellbeing</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST303</p>
+			<p class="course-title">Law for Life, Peace and Justice</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST304</p>
+			<p class="course-title">Documentary Film: Theory and Practice</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST305</p>
+			<p class="course-title">Borders and Beyond: Past and Future</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST306</p>
+			<p class="course-title">Ethical Leadership</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST307</p>
+			<p class="course-title">Art, Community and the Future</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST308</p>
+			<p class="course-title">Social Dimensions of Faith and Development</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST309</p>
+			<p class="course-title">Global Citizenship</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST310</p>
+			<p class="course-title">Social Cohesion and Peace Building</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST314</p>
+			<p class="course-title">Visual Storytelling: Understanding Society through Documentary Film</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	
+		<div class="course-box stream-5">
+			<p class="course-code">CST333</p>
+			<p class="course-title">Personal Finance for Sustainable Economic Wellbeing</p>
+			<p class="course-hp">PreReq: N/A</p>
+		</div>
+	  </div>
+    <script src="script.js"></script>
 </body>
 </html>
