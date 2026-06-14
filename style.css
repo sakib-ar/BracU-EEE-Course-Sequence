@@ -25,7 +25,7 @@
     .highlight {
         background-color: yellow;
         color: black;
-        animation: pulse 0.85s infinite ease-in-out;
+        animation: pulse 0.75s infinite ease-in-out;
     }
 
     .soft-highlight {
@@ -36,13 +36,13 @@
 
     @keyframes pulse {
       0% {
-        transform: scale(0.95); /* Starting size -> 95% of its size */
+        transform: scale(0.975); /* Starting size -> 95% of its size */
       }
       50% {
         transform: scale(1); /* Grows to 100% of its size */
       }
       100% {
-        transform: scale(0.95); /* Shrinks back down */
+        transform: scale(0.975); /* Shrinks back down to 95% o its size */
       }
     }
     
@@ -91,7 +91,7 @@ table {
   border: 1px solid #000;
 }
 
-/* ADD-ONS */
+/* Course Info */
 
 .course-container {
   display: grid;
@@ -141,8 +141,9 @@ table {
 
 .course-hp {
   font-size: 0.8em;
-  color: #999;
+  color: #DDD;
   margin: 4px 0;
+  font-style: italic;
 }
 
 /* Responsive fallback for smaller screens */
