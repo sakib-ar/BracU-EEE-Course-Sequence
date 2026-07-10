@@ -8,9 +8,9 @@
         });
     });
 
-    /**
-     * Checks all courses to see if their prerequisites are met.
-     * If all 'preq' courses are struck through, it adds a class to show the tick mark.
+    /*
+     Checks all courses to see if their prerequisites are met.
+	 Then, if all 'preq' courses are struck through -> it adds a class to show the tick mark.
      */
     function updatePrereqStatus() {
         // Get all course cells that have a 'preq' attribute
@@ -79,3 +79,33 @@
     });
 
     document.addEventListener('DOMContentLoaded', updatePrereqStatus);
+	
+	document.addEventListener('DOMContentLoaded', () => {
+  const icons = document.querySelectorAll('.icon-link');
+
+  icons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+      icon.classList.add('pulse');
+    });
+
+    icon.addEventListener('mouseleave', () => {
+      icon.classList.remove('pulse');
+    });
+  });
+
+  const footer = document.querySelector('.site-footer');
+  if (footer) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          footer.querySelectorAll('.footer-text, .icon-link').forEach(el => {
+            el.style.animationPlayState = 'running';
+          });
+          observer.unobserve(footer);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(footer);
+  }
+});
