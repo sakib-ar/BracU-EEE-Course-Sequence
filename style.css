@@ -1,160 +1,253 @@
 .course {
-    position: relative; /* This is required for positioning the tick mark */
-    padding: 5px;
-    margin: 5px;
-    border: 2px solid white;
-    text-align: center;
-    width: 100px;
+  position: relative; /* for positioning tick mark */
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid white;
+  text-align: center;
+  width: 100px;
 }
 
-    .tick-mark {
-    display: none; /* The tick is hidden by default */
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: bold;
-    }
+  .tick-mark {
+  display: none; /* tick is hidden by default */
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  }
 
-    /* When a course cell has this class, its tick mark will become visible */
-    .prereqs-met .tick-mark {
-        display: block;
-    }
+  /* When a course cell has this class, its tick mark will become visible */
+  .prereqs-met .tick-mark {
+      display: block;
+  }
 
-    .highlight {
-        background-color: yellow;
-        color: black;
-        animation: pulse 0.75s infinite ease-in-out;
-    }
+  .highlight {
+      background-color: yellow;
+      color: black;
+      animation: pulse 0.75s infinite ease-in-out;
+  }
 
-    .soft-highlight {
-        background-color:#25aa25;
-        color: black;
-        animation: pulse 0.75s infinite ease-in-out;
-    }
+  .soft-highlight {
+      background-color:#25aa25;
+      color: black;
+      animation: pulse 0.75s infinite ease-in-out;
+  }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(0.975); /* Starting size -> 95% of its size */
-      }
-      50% {
-        transform: scale(1); /* Grows to 100% of its size */
-      }
-      100% {
-        transform: scale(0.975); /* Shrinks back down to 95% o its size */
-      }
+  @keyframes pulse {
+    0% {
+      transform: scale(0.975); /* Starting size -> 95% of its size */
     }
-    
+    50% {
+      transform: scale(1); /* Grows to 100% of its size */
+    }
+    100% {
+      transform: scale(0.975); /* Shrinks back down to 95% o its size */
+    }
+  }
+  
 .table-container {
-  display: flex;
-  gap: 0px;
-  align-items: flex-start;
-  margin: 0px 250px;
-  color: white;
+display: flex;
+gap: 0px;
+align-items: flex-start;
+margin: 0px 250px;
+color: white;
 }
 
 tr.strikethrough {
-  text-decoration: line-through;
+text-decoration: line-through;
 }
 
 table {
-        margin: 0px auto;
-        border-collapse: collapse;
-    }
+      margin: 0px auto;
+      border-collapse: collapse;
+  }
 
-    td {
-        padding: 20px;
-    }
+  td {
+      padding: 20px;
+  }
 
 .strikethrough {
-    text-decoration: line-through;
-    }
+  text-decoration: line-through;
+  }
 
 .legend {
-  border: 1px solid #fff;
-  padding: 5px 5px;
-  background-color: #0d1940;
-  font-family: sans-serif;
+border: 1px solid #fff;
+padding: 5px 5px;
+background-color: #0d1940;
+font-family: sans-serif;
 }
 
 .legend-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
+display: flex;
+align-items: center;
+margin-bottom: 5px;
 }
 
 .color-box {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  border: 1px solid #000;
+width: 20px;
+height: 20px;
+margin-right: 10px;
+border: 1px solid #000;
 }
 
 /* Course Info */
 
 .course-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 12px;
 }
 
 .course-box {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  color: white;
-  text-align: left;
-  transition: background-color 0.3s ease;
-  box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 6px;
+padding: 10px;
+color: white;
+text-align: left;
+transition: background-color 0.3s ease;
+box-sizing: border-box;
 }
 
 .course-box.eee-core:hover {
-  background-color: #198c3b;
+background-color: #198c3b;
 }
 
 .course-box.gened-mandatory:hover {
-  background-color: #c04747;
+background-color: #c04747;
 }
 
 .course-box.stream-3:hover {
-  background-color: #886c1e;
+background-color: #886c1e;
 }
 
 .course-box.stream-4:hover {
-  background-color: #304889;
+background-color: #304889;
 }
 
 .course-box.stream-5:hover {
-  background-color: #744893;
+background-color: #744893;
 }
 
 .course-code {
-  font-weight: bold;
-  margin: 4px 0;
+font-weight: bold;
+margin: 4px 0;
 }
 
 .course-title {
-  margin: 4px 0;
-  font-size: 0.9em;
+margin: 4px 0;
+font-size: 0.9em;
 }
 
 .course-hp {
-  font-size: 0.8em;
-  color: #DDD;
-  margin: 4px 0;
-  font-style: italic;
+font-size: 0.8em;
+color: #DDD;
+margin: 4px 0;
+font-style: italic;
 }
 
 /* Responsive fallback for smaller screens */
 @media (max-width: 1000px) {
-  .course-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.course-container {
+  grid-template-columns: repeat(3, 1fr);
+}
 }
 
 @media (max-width: 500px) {
-  .course-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.course-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
+.site-footer {
+background: #0a0a0f;
+padding: 25px 20px;
+text-align: center;
+font-family: 'Segoe UI', sans-serif;
+border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-text {
+color: #cfcfcf;
+font-size: 1rem;
+margin: 0 0 20px 0;
+opacity: 0;
+transform: translateY(10px);
+animation: fadeUp 0.8s ease forwards;
+}
+
+.name-highlight {
+color: #0ff;
+text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+font-weight: 600;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  40% { transform: scale(1); }
+}
+
+.social-icons {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 24px;
+flex-wrap: wrap;
+}
+
+.icon-link {
+display: inline-flex;
+opacity: 0;
+transform: translateY(10px);
+animation: fadeUp 0.8s ease forwards;
+}
+
+.icon-link:nth-child(1) { animation-delay: 0.1s; }
+.icon-link:nth-child(2) { animation-delay: 0.2s; }
+.icon-link:nth-child(3) { animation-delay: 0.3s; }
+.icon-link:nth-child(4) { animation-delay: 0.4s; }
+
+.icon-svg {
+width: 26px;
+height: 26px;
+fill: #e0e0e0;
+transition: fill 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.icon-link:hover .icon-svg {
+transform: scale(1.35);
+}
+
+/* per-brand glow colors */
+.icon-github:hover .icon-svg   { fill: #f0f0f0; filter: drop-shadow(0 0 6px #ffffff); }
+.icon-linkedin:hover .icon-svg { fill: #0ff;    filter: drop-shadow(0 0 6px #0ff); }
+.icon-facebook:hover .icon-svg { fill: #4da8ff; filter: drop-shadow(0 0 6px #4da8ff); }
+.icon-instagram:hover .icon-svg { fill: #e1306c; filter: drop-shadow(0 0 6px #e1306c); }
+
+/* the pulse class is toggled by JS on hover */
+.icon-link.pulse .icon-svg {
+animation: neonPulse 0.9s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+0%, 100% {
+  filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
+}
+50% {
+  filter: drop-shadow(0 0 14px currentColor) drop-shadow(0 0 22px currentColor);
+}
+}
+
+@keyframes fadeUp {
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
