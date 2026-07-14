@@ -1,26 +1,48 @@
-# BracU-EEE-Course-Sequence
+# BRACU-EEE-Course-Sequence
 Made from BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake from Spring 2020 and onwards)<br>
+
 > [!WARNING]
-> Prerequisites are set as per the BRACU-CONNECT requirements, NOT as per BRACU Website (Sequence on the Website is Outdated!)
-### Interaction Features:
+> Prerequisites are set as per the BRACU-CONNECT requirements, NOT as per BRACU Website (Prerequisites on the BRACU Website is Outdated!)
 
-- **Hover Effect on Courses**:  
-  When the user hovers the mouse over a course cell in the table, the respective prerequisite course will change to a **yellow** color. This means that the course (in yellow color) is a prerequisite for the selected course.
+### 🔑 Key Features
 
-- **Unlocking Immediate Courses**:  
-  Upon hovering over a course, the immediate courses that follow in the curriculum will **unlock** (fully/partially) and change their color to **green**, which means that they will be available to be taken after this course.
+- **🖱️ Hover Effect :**  
+  - **Prerequisites (Yellow) :** When you hover your mouse over a course cell, any required prerequisite courses automatically light up in **Yellow** to show what you need to take first.
+  - **Unlocking Next (Green) :** Hovering also instantly highlights future immediate courses in **Green**, showing you what this specific course will unlock (fully or partially) in later semesters.
 
-- **Course List Organization**:  
-  The courses are organized into categories for better navigation:
-  - **Program Core Courses (EEE)**: The must-take EEE courses that form the core of the program.
-  - **General Education (Gen-Ed)**: Courses that are part of the foundational education.
-  - **Courses Outside Departments (COD)**: Additional courses available outside the primary department, known as COD, mainly from 3 steams: [Stream 3] - Arts and Humanities, [Stream 4] - Social Sciences, [Stream 5] - CST (Communities, Seeking Transformation)
+- **👆🏼 Click to Mark Complete (Strikethrough) :**
+  - Click on any course cell within the main sequence table to toggle a clean completion strikethrough line and reduce its opacity.
+  - Click on any row within the lower course lists to toggle a matching completion effect.
+  - *Note: Table section headers remain entirely unaffected.*
 
-- **Strikethrough Feature**:
-  - Click on any course to toggle stirkethorugh effect in course sequence table.
-  - Click on any row to toggle the strikethrough effect in course list tables.
-  - Table headers remain unaffected by the strikethrough effect.
+- **✔️ Tick Mark Status (Completion) :**
+  - Once you successfully complete **all** the required prerequisites for a course cell, a visual tick mark will automatically appear in its top right corner. This lets you know at a glance that the course is officially unlocked and ready to be taken.
 
-- **Tick Feature**:
-  - Clicking on all the prerequisite course(s) of other cell will activate a white tick on the unlocked course/cell.
-  - Table headers remain unaffected by the Tick feature.
+- **⚠️ Intelligent Prerequisite Warnings (Toast Engine) :**
+  - If you attempt to mark a course as completed before taking its prerequisites, the system will block the action and trigger a non-blocking toast notification at the top of the screen.
+  - The notification acts as a helpful warning, showing you a clean, comma-separated list of all the missing prerequisite courses you need to complete first.
+  - It also blocks you from breaking the path backward by warning you if you try to undo a foundational course that a completed future course depends on.
+
+---
+
+### 📂 Course List Organization
+Below the interactive sequence grid, courses are divided into distinct categories to make syllabus tracking simpler:
+- **Program Core Courses (EEE) :** The must-take EEE courses that form the core of the program.
+- **General Education (Gen-Ed) :** Foundational institutional courses.
+- **Courses Outside Departments (COD) :** Additional courses available outside the department, known as COD (unofficially), mainly from 3 steams:
+  - **[Stream 3]** - Arts and Humanities
+  - **[Stream 4]** - Social Sciences
+  - **[Stream 5]** - CST (Communities, Seeking Transformation)
+
+---
+
+### 📱 Seamless Mobile UX
+No more horizontal scrolling required on phones! The layout scales dynamically when viewed on smaller mobile viewports:
+- Fixed columns (like Years and Semesters) compress down aggressively to maximize screen landscape.
+- Over **80% of your screen width** on mobile is dedicated explicitly to rendering the interactive course boxes cleanly.
+- Course titles auto-wrap seamlessly within their grids to avoid breaking bounds or overlapping labels.
+
+---
+
+> [!NOTE]
+> View the live website on [BRACU EEE - Course PreRequisites](https://bracu-eee-prereq.vercel.app/).
