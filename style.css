@@ -1,185 +1,208 @@
+/* 1. CORE INTERACTION & ANIMATION STYLES */
 .course {
   position: relative; /* for positioning tick mark */
-  padding: 5px;
-  margin: 5px;
-  border: 2px solid white;
+  padding: 8px 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
   text-align: center;
-  width: 100px;
+  background-color: #010225;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+  word-break: break-word;
 }
 
-  .tick-mark {
+.course:hover {
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tick-mark {
   display: none; /* tick is hidden by default */
   position: absolute;
-  top: 2px;
-  right: 5px;
-  font-size: 16px;
-  color: #ffffff;
+  top: 5px;
+  right: 8px;
+  font-size: 18px;
+  color: #25aa25;
   font-weight: bold;
-  }
-
-  /* When a course cell has this class, its tick mark will become visible */
-  .prereqs-met .tick-mark {
-      display: block;
-  }
-
-  .highlight {
-      background-color: yellow;
-      color: black;
-      animation: pulse 0.75s infinite ease-in-out;
-  }
-
-  .soft-highlight {
-      background-color:#25aa25;
-      color: black;
-      animation: pulse 0.75s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(0.975); /* Starting size -> 95% of its size */
-    }
-    50% {
-      transform: scale(1); /* Grows to 100% of its size */
-    }
-    100% {
-      transform: scale(0.975); /* Shrinks back down to 95% o its size */
-    }
-  }
-  
-.table-container {
-display: flex;
-gap: 0px;
-align-items: flex-start;
-margin: 0px 250px;
-color: white;
+  text-shadow: 0px 0px 3px rgba(0,0,0,0.8);
 }
 
-tr.strikethrough {
-text-decoration: line-through;
+/* When a course cell has this class, its tick mark will become visible */
+.prereqs-met .tick-mark {
+  display: block;
 }
 
-table {
-      margin: 0px auto;
-      border-collapse: collapse;
-  }
+.highlight {
+  background-color: yellow;
+  color: black;
+  animation: pulse 0.75s infinite ease-in-out;
+}
 
-  td {
-      padding: 20px;
-  }
+.soft-highlight {
+  background-color: #25aa25;
+  color: black;
+  animation: pulse 0.75s infinite ease-in-out;
+}
 
-.strikethrough {
+.strikethrough, tr.strikethrough {
   text-decoration: line-through;
-  }
+  opacity: 0.5;
+}
 
-.legend {
-border: 1px solid #fff;
-padding: 5px 5px;
-background-color: #0d1940;
-font-family: sans-serif;
+@keyframes pulse {
+  0% { transform: scale(0.975); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.975); }
+}
+
+/* 2. SEQUENCE TABLE GRID (DESKTOP DEFAULT) */
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.sequence-grid {
+  display: grid;
+  /* 7 Columns: Year, Semester, and 5 Course slots */
+  grid-template-columns: 80px 120px repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  background-color: #0d1940;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Structural Cell Customizations */
+.header-cell { background-color: #03192d; pointer-events: none; font-weight: bold; }
+.year-cell { background-color: #03192d; pointer-events: none; font-size: 1.1em; }
+.sem-cell { background-color: #062444; pointer-events: none; font-size: 0.9em; }
+
+/* Layout Spanning Adaptations */
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-5 { grid-column: span 5; }
+.row-span-3 { grid-row: span 3; }
+
+
+/* 3. NEW COMPACT TOP DASHBOARD PANEL */
+.dashboard-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: #0d1940;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-family: sans-serif;
+  font-size: 0.88rem;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+}
+
+.dashboard-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-item {
+  display: inline-flex;
+  align-items: center;
+  color: #e0e6ed;
+}
+
+.dash-icon {
+  margin-right: 5px;
+  font-size: 1.05rem;
+}
+
+.dashboard-divider {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .legend-item {
-display: flex;
-align-items: center;
-margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  color: #e0e6ed;
 }
 
 .color-box {
-width: 20px;
-height: 20px;
-margin-right: 10px;
-border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border: 1px solid #000;
+  border-radius: 3px;
 }
 
-/* Course Info */
 
+/* 4. LOWER COURSE INFO DISPLAY CARDS */
 .course-container {
-display: grid;
-grid-template-columns: repeat(6, 1fr);
-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 20px;
 }
 
 .course-box {
-border: 1px solid #ccc;
-border-radius: 6px;
-padding: 10px;
-color: white;
-text-align: left;
-transition: background-color 0.3s ease;
-box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  color: white;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
-.course-box.eee-core:hover {
-background-color: #198c3b;
-}
+.course-box.eee-core:hover { background-color: #198c3b; }
+.course-box.gened-mandatory:hover { background-color: #c04747; }
+.course-box.stream-3:hover { background-color: #886c1e; }
+.course-box.stream-4:hover { background-color: #304889; }
+.course-box.stream-5:hover { background-color: #744893; }
 
-.course-box.gened-mandatory:hover {
-background-color: #c04747;
-}
+.course-code { font-weight: bold; margin: 4px 0; }
+.course-title { margin: 4px 0; font-size: 0.9em; }
+.course-hp { font-size: 0.8em; color: #DDD; margin: 4px 0; font-style: italic; }
 
-.course-box.stream-3:hover {
-background-color: #886c1e;
-}
 
-.course-box.stream-4:hover {
-background-color: #304889;
-}
-
-.course-box.stream-5:hover {
-background-color: #744893;
-}
-
-.course-code {
-font-weight: bold;
-margin: 4px 0;
-}
-
-.course-title {
-margin: 4px 0;
-font-size: 0.9em;
-}
-
-.course-hp {
-font-size: 0.8em;
-color: #DDD;
-margin: 4px 0;
-font-style: italic;
-}
-
-/* Responsive fallback for smaller screens */
-@media (max-width: 1000px) {
-.course-container {
-  grid-template-columns: repeat(3, 1fr);
-}
-}
-
-@media (max-width: 500px) {
-.course-container {
-  grid-template-columns: repeat(2, 1fr);
-}
-}
-
+/* 5. SITE FOOTER & BRAND GLOW ANIMATIONS */
 .site-footer {
-background: #0a0a0f;
-padding: 25px 20px;
-text-align: center;
-font-family: 'Segoe UI', sans-serif;
-border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0a0a0f;
+  padding: 25px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 40px;
 }
 
 .footer-text {
-color: #cfcfcf;
-font-size: 1rem;
-margin: 0 0 20px 0;
-opacity: 0;
-transform: translateY(10px);
-animation: fadeUp 0.8s ease forwards;
+  color: #cfcfcf;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .name-highlight {
-color: #0ff;
-text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
-font-weight: 600;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+  font-weight: 600;
 }
 
 .heart {
@@ -194,18 +217,18 @@ font-weight: 600;
 }
 
 .social-icons {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 24px;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
 .icon-link {
-display: inline-flex;
-opacity: 0;
-transform: translateY(10px);
-animation: fadeUp 0.8s ease forwards;
+  display: inline-flex;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
 .icon-link:nth-child(1) { animation-delay: 0.1s; }
@@ -214,40 +237,167 @@ animation: fadeUp 0.8s ease forwards;
 .icon-link:nth-child(4) { animation-delay: 0.4s; }
 
 .icon-svg {
-width: 26px;
-height: 26px;
-fill: #e0e0e0;
-transition: fill 0.3s ease, filter 0.3s ease, transform 0.3s ease;
-filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  width: 26px;
+  height: 26px;
+  fill: #e0e0e0;
+  transition: fill 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
 }
 
 .icon-link:hover .icon-svg {
-transform: scale(1.35);
+  transform: scale(1.35);
 }
 
-/* per-brand glow colors */
-.icon-github:hover .icon-svg   { fill: #f0f0f0; filter: drop-shadow(0 0 6px #ffffff); }
-.icon-linkedin:hover .icon-svg { fill: #0ff;    filter: drop-shadow(0 0 6px #0ff); }
-.icon-facebook:hover .icon-svg { fill: #4da8ff; filter: drop-shadow(0 0 6px #4da8ff); }
+/* Per-brand glow alignments */
+.icon-github:hover .icon-svg    { fill: #f0f0f0; filter: drop-shadow(0 0 6px #ffffff); }
+.icon-linkedin:hover .icon-svg  { fill: #0ff;    filter: drop-shadow(0 0 6px #0ff); }
+.icon-facebook:hover .icon-svg  { fill: #4da8ff; filter: drop-shadow(0 0 6px #4da8ff); }
 .icon-instagram:hover .icon-svg { fill: #e1306c; filter: drop-shadow(0 0 6px #e1306c); }
 
-/* the pulse class is toggled by JS on hover */
 .icon-link.pulse .icon-svg {
-animation: neonPulse 0.9s ease-in-out infinite;
+  animation: neonPulse 0.9s ease-in-out infinite;
 }
 
 @keyframes neonPulse {
-0%, 100% {
-  filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor);
-}
-50% {
-  filter: drop-shadow(0 0 14px currentColor) drop-shadow(0 0 22px currentColor);
-}
+  0%, 100% { filter: drop-shadow(0 0 4px currentColor) drop-shadow(0 0 8px currentColor); }
+  50% { filter: drop-shadow(0 0 14px currentColor) drop-shadow(0 0 22px currentColor); }
 }
 
 @keyframes fadeUp {
-to {
-  opacity: 1;
-  transform: translateY(0);
+  to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* 6. RESPONSIVE MEDIA QUERIES (DESKTOP -> MOBILE) */
+
+/* Tablet Optimization for Course Details Grid */
+@media (max-width: 1000px) {
+  .course-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Screens Optimization (Universal Fix) */
+@media screen and (max-width: 768px) {
+  /* Compress margins to maximize viewport spaces */
+  .table-container {
+      padding: 0 4px;
+      margin: 5px 0;
+  }
+
+  /* Mobile Dashboard Adjustments */
+  .dashboard-panel {
+      font-size: 0.62rem;
+      padding: 6px 8px;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 4px;
+  }
+
+  .dashboard-group {
+      gap: 8px;
+      justify-content: center;
+      font-size: 10px;
+  }
+
+  .dashboard-divider {
+      display: none; /* Hide vertical rule to save horizontal space */
+  }
+
+  .color-box {
+      width: 11px;
+      height: 11px;
+      margin-right: 4px;
+  }
+
+  /* Column Optimization: Year gets 30px, Semester gets 48px, 
+     and Courses inherit all remaining horizontal screen space! */
+  .sequence-grid {
+      grid-template-columns: 32px 54px repeat(5, 1fr);
+      gap: 3px; 
+      padding: 5px;
+      border-radius: 6px;
+  }
+
+  /* Scales box metrics down cleanly for tiny screen viewports */
+  .course {
+      padding: 6px 2px;
+      font-size: 0.55rem;
+      border-width: 1px;
+      border-radius: 4px;
+      line-height: 1.15;
+  }
+
+  /* Structural Cell Compression adjustments */
+  .year-cell { font-size: 0.55rem; line-height: 1.2; padding: 2px; }
+  .sem-cell { font-size: 0.5rem; line-height: 1.1; padding: 2px; }
+  .header-cell { font-size: 0.55rem; padding: 4px 2px; }
+
+  /* Shrink the green check mark so it stays in place elegantly */
+  .tick-mark {
+      font-size: 9px;
+      top: 1px;
+      right: 3px;
+  }
+
+  /* Responsive adjustments for description boxes on mobile */
+  .course-container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 10px;
+      gap: 8px;
+      font-size: 11px;
+  }
+}
+
+/* 7. NON-BLOCKING TOAST NOTIFICATIONS */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none; /* Allows you to click "through" the gap spaces */
+}
+
+.toast-notification {
+  background-color: #1a0815; /* Dark magenta/red hue */
+  color: #ff4a4a;
+  border: 1px solid #ff4a4a;
+  box-shadow: 0 0 15px rgba(255, 74, 74, 0.4);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 0.88rem;
+  font-weight: bold;
+  text-align: center;
+  pointer-events: auto; /* Allows clicking to dismiss if user wants */
+  white-space: nowrap; /* Keeps message on a single line */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  
+  /* Animation: Slides in gracefully, stays 3.5s, then fades out over 0.5s */
+  animation: toastEnter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+             toastExit 0.5s ease 3.5s forwards;
+}
+
+@keyframes toastEnter {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toastExit {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-20px); opacity: 0; }
+}
+
+/* Mobile font scaling for toast */
+@media screen and (max-width: 768px) {
+  .toast-notification {
+      font-size: 0.72rem;
+      padding: 8px 16px;
+      white-space: normal; /* Allows text wrap on super narrow screens */
+      max-width: 90vw;
+  }
 }
