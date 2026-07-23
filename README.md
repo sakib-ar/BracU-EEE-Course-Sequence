@@ -4,6 +4,8 @@ Made from BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake fro
 > [!WARNING]
 > Prerequisites are set as per the BRACU-CONNECT requirements, NOT as per BRACU Website (Prerequisites on the BRACU Website is Outdated!)
 
+---
+
 ### 🔑 Key Features
 
 - **🖱️ Hover Effect :**  
@@ -44,5 +46,11 @@ No more horizontal scrolling required on phones! The layout scales dynamically w
 
 ---
 
+## 🌐 Live Website
 > [!NOTE]
 > View the live website on [BRACU EEE - Course PreRequisites](https://bracu-eee-prereq.vercel.app/).
+
+---
+
+## ⚖️ License
+[MIT LICENSE](LICENSE)
