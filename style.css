@@ -62,6 +62,7 @@
   100% { transform: scale(0.975); }
 }
 
+
 /* 2. SEQUENCE TABLE GRID (DESKTOP DEFAULT) */
 .table-container {
   width: 100%;
@@ -74,8 +75,7 @@
 
 .sequence-grid {
   display: grid;
-  /* 7 Columns: Year, Semester, and 5 Course slots */
-  grid-template-columns: 80px 120px repeat(5, minmax(0, 1fr));
+  grid-template-columns: 80px 120px repeat(5, minmax(0, 1fr)); /* 7 Columns: Year + Semester + 5 Course slots */
   gap: 4px;
   background-color: #0d1940;
   padding: 10px;
@@ -95,7 +95,7 @@
 .row-span-3 { grid-row: span 3; }
 
 
-/* 3. NEW COMPACT TOP DASHBOARD PANEL */
+/* 3. DASHBOARD PANEL */
 .dashboard-panel {
   display: flex;
   flex-wrap: wrap;
@@ -151,10 +151,10 @@
 }
 
 
-/* 4. LOWER COURSE INFO DISPLAY CARDS */
+/* 4. COURSE INFO DISPLAY BOXES */
 .course-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* 5 Equal Spaced Columns */
   gap: 12px;
   padding: 20px;
 }
@@ -169,18 +169,18 @@
   box-sizing: border-box;
 }
 
-.course-box.eee-core:hover { background-color: #198c3b; }
-.course-box.gened-mandatory:hover { background-color: #c04747; }
-.course-box.stream-3:hover { background-color: #886c1e; }
-.course-box.stream-4:hover { background-color: #304889; }
-.course-box.stream-5:hover { background-color: #744893; }
+.course-box.eee-core:hover { background-color: #198c3b; }         /* EEE Core Course Style*/
+.course-box.gened-mandatory:hover { background-color: #c04747; }  /* GenEd Mandatory Course Style*/
+.course-box.stream-3:hover { background-color: #886c1e; }         /* GenEd Stream-3 Course Style*/
+.course-box.stream-4:hover { background-color: #304889; }         /* GenEd Stream-4 Course Style*/
+.course-box.stream-5:hover { background-color: #744893; }         /* GenEd Stream-5 Course Style*/
 
 .course-code { font-weight: bold; margin: 4px 0; }
 .course-title { margin: 4px 0; font-size: 0.9em; }
 .course-hp { font-size: 0.8em; color: #DDD; margin: 4px 0; font-style: italic; }
 
 
-/* 5. SITE FOOTER & BRAND GLOW ANIMATIONS */
+/* 5. SITE FOOTER & ICON GLOW ANIMATIONS */
 .site-footer {
   background: #0a0a0f;
   padding: 25px 20px;
@@ -248,7 +248,7 @@
   transform: scale(1.35);
 }
 
-/* Per-brand glow alignments */
+/* Per-icon glow alignments */
 .icon-github:hover .icon-svg    { fill: #f0f0f0; filter: drop-shadow(0 0 6px #ffffff); }
 .icon-linkedin:hover .icon-svg  { fill: #0ff;    filter: drop-shadow(0 0 6px #0ff); }
 .icon-facebook:hover .icon-svg  { fill: #4da8ff; filter: drop-shadow(0 0 6px #4da8ff); }
@@ -273,7 +273,7 @@
 /* Tablet Optimization for Course Details Grid */
 @media (max-width: 1000px) {
   .course-container {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -349,6 +349,7 @@
   }
 }
 
+
 /* 7. NON-BLOCKING TOAST NOTIFICATIONS */
 .toast-container {
   position: fixed;
@@ -363,7 +364,7 @@
 }
 
 .toast-notification {
-  background-color: #1a0815; /* Dark magenta/red hue */
+  background-color: #1a0808; /* Dark magenta/red hue */
   color: #ff4a4a;
   border: 1px solid #ff4a4a;
   box-shadow: 0 0 15px rgba(255, 74, 74, 0.4);
