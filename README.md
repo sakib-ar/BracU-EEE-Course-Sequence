@@ -41,6 +41,12 @@ Below the interactive sequence grid, courses are divided into distinct categorie
   - **[Stream 3]** - Arts and Humanities
   - **[Stream 4]** - Social Sciences
   - **[Stream 5]** - CST (Communities, Seeking Transformation)
+- **Program Elective Courses (EEE) :** Department-approved EEE electives that let students specialize in advanced topics aligned with their interests and career goals. There are mainly 4 majors and one Interdisciplinary Field:
+  - **Area 1** - Power ⚡
+  - **Area 2** - Electronics 💻
+  - **Area 3** - Communication and Network 📡
+  - **Area 4** - Robotics and Intelligent System 🤖
+  - **Interdisciplinary / Emerging Topics 🔗** - Not a Major
 
 ---
 
