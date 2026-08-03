@@ -1,19 +1,15 @@
-    // Strikethrough on lower tables
-    document.querySelectorAll('.ClickandStrike').forEach(function(table) {
-        table.querySelector('tbody').addEventListener("click", function(event) {
-            const clickedRow = event.target.closest("tr");
-            if (clickedRow && clickedRow.tagName === "TR") {
-                clickedRow.classList.toggle("strikethrough");
-            }
-        });
+// Strikethrough on lower tables
+document.querySelectorAll('.ClickandStrike').forEach(function(table) {
+    table.querySelector('tbody').addEventListener("click", function(event) {
+        const clickedRow = event.target.closest("tr");
+        if (clickedRow && clickedRow.tagName === "TR") {
+            clickedRow.classList.toggle("strikethrough");
+        }
     });
+});
 
-    /*
-     Checks all courses to see if their prerequisites are met.
-	 Then, if all 'preq' courses are struck through -> it adds a class to show the tick mark.
-     */
-    /* Checks all courses to see if their prerequisites are met */
-        function updatePrereqStatus() {
+/* Checks all courses to see if their prerequisites are met. Then, if all 'preq' courses are struck through -> it adds a class to show the tick mark.*/
+function updatePrereqStatus() {
     // Get all course elements that have a 'preq' attribute
     document.querySelectorAll('.course[preq]').forEach(courseCell => {
         const prereqIds = courseCell.getAttribute('preq').split(',');
@@ -35,6 +31,7 @@
 
 /* Helper function to generate smooth, self-destructing toast warnings */
 function showToast(message) {
+    
     // 1. Get or create the master toast container
     let container = document.querySelector('.toast-container');
     if (!container) {
@@ -88,6 +85,7 @@ function toggleStrikethrough(element) {
             }
         }
     } 
+    
     // Case 2: Checking dependent courses when trying to un-complete
     else {
         const poreqAttr = element.getAttribute('poreq');
@@ -105,7 +103,7 @@ function toggleStrikethrough(element) {
 
             // Trigger warning toast
             if (activePostreqs.length > 0) {
-                showToast(`⚠️ <b>Dependency Warning:</b> Cannot undo ${courseCode} because you completed ${activePostreqs.join(', ')}.`);
+                showToast(`⚠️ <b>Dependency Warning:</b> Cannot undo ${courseCode}. Please un-check ${activePostreqs.join(', ')} first.`);
                 return; 
             }
         }
@@ -160,31 +158,32 @@ function toggleStrikethrough(element) {
     document.addEventListener('DOMContentLoaded', updatePrereqStatus);
 	
 	document.addEventListener('DOMContentLoaded', () => {
-  const icons = document.querySelectorAll('.icon-link');
+        const icons = document.querySelectorAll('.icon-link');
 
-  icons.forEach(icon => {
-    icon.addEventListener('mouseenter', () => {
-      icon.classList.add('pulse');
+    icons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.classList.add('pulse');
+        });
+
+        icon.addEventListener('mouseleave', () => {
+            icon.classList.remove('pulse');
+        });
     });
 
-    icon.addEventListener('mouseleave', () => {
-      icon.classList.remove('pulse');
-    });
-  });
+    const footer = document.querySelector('.site-footer');
+    if (footer) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footer.querySelectorAll('.footer-text, .icon-link').forEach(el => {
+                        el.style.animationPlayState = 'running';
+                    });
+                    
+                    observer.unobserve(footer);
+                }
+            });
+        }, { threshold: 0.2 });
 
-  const footer = document.querySelector('.site-footer');
-  if (footer) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          footer.querySelectorAll('.footer-text, .icon-link').forEach(el => {
-            el.style.animationPlayState = 'running';
-          });
-          observer.unobserve(footer);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer.observe(footer);
-  }
+        observer.observe(footer);
+    }
 });
