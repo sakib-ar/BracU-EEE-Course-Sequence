@@ -1,8 +1,14 @@
 # BRACU-EEE-Course-Sequence
-Made from BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake from Spring 2020 and onwards)<br>
+Made using BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake from Spring 2020 and onwards)<br>
 
 > [!WARNING]
-> Prerequisites are set as per the BRACU-CONNECT requirements, NOT as per BRACU Website (Prerequisites on the BRACU Website is Outdated!)
+> Prerequisites are set as per the BRACU-CONNECT requirements, NOT as per BRACU Website. <br> (Prerequisites on the BRACU Website is Outdated!)
+
+---
+
+## 🌐 Live Website
+> [!NOTE]
+> View the live website on [BRACU EEE - Course PreRequisites](https://bracu-eee-prereq.vercel.app/).
 
 ---
 
@@ -38,17 +44,11 @@ Below the interactive sequence grid, courses are divided into distinct categorie
 
 ---
 
-### 📱 Seamless Mobile UX
+### 📱 Mobile UX
 No more horizontal scrolling required on phones! The layout scales dynamically when viewed on smaller mobile viewports:
 - Fixed columns (like Years and Semesters) compress down aggressively to maximize screen landscape.
 - Over **80% of your screen width** on mobile is dedicated explicitly to rendering the interactive course boxes cleanly.
 - Course titles auto-wrap seamlessly within their grids to avoid breaking bounds or overlapping labels.
-
----
-
-## 🌐 Live Website
-> [!NOTE]
-> View the live website on [BRACU EEE - Course PreRequisites](https://bracu-eee-prereq.vercel.app/).
 
 ---
 
