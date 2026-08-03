@@ -154,7 +154,7 @@
 /* 4. COURSE INFO DISPLAY BOXES */
 .course-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 Equal Spaced Columns */
+  grid-template-columns: repeat(4, 1fr); /* 4 Equal Spaced Columns */
   gap: 12px;
   padding: 20px;
 }
@@ -169,11 +169,16 @@
   box-sizing: border-box;
 }
 
-.course-box.eee-core:hover { background-color: #198c3b; }         /* EEE Core Course Style*/
-.course-box.gened-mandatory:hover { background-color: #c04747; }  /* GenEd Mandatory Course Style*/
-.course-box.stream-3:hover { background-color: #886c1e; }         /* GenEd Stream-3 Course Style*/
-.course-box.stream-4:hover { background-color: #304889; }         /* GenEd Stream-4 Course Style*/
-.course-box.stream-5:hover { background-color: #744893; }         /* GenEd Stream-5 Course Style*/
+.course-box.eee-core:hover { background-color: #198c3b; }              /* EEE Core Course Info Style*/
+.course-box.gened-mandatory:hover { background-color: #c04747; }       /* GenEd Mandatory Course Info Style*/
+.course-box.stream-3:hover { background-color: #886c1e; }              /* GenEd Stream-3 Course Info Style*/
+.course-box.stream-4:hover { background-color: #304889; }              /* GenEd Stream-4 Course Info Style*/
+.course-box.stream-5:hover { background-color: #744893; }              /* GenEd Stream-5 Course Info Style*/
+.course-box.eee-power:hover { background-color: #8f8f00; }             /* Major 1: Power Course Info Style*/
+.course-box.eee-electronics:hover { background-color: #000090; }       /* Major 2: Electronics Course Info Style*/
+.course-box.eee-communication:hover { background-color: #008200; }     /* Major 3: Communication Course Info Style*/
+.course-box.eee-robotics:hover { background-color: #800000; }          /* Major 4: Robotics Course Info Style*/
+.course-box.eee-interdisciplinary:hover { background-color: #555555; } /* Interdisciplinary Course Info Style*/
 
 .course-code { font-weight: bold; margin: 4px 0; }
 .course-title { margin: 4px 0; font-size: 0.9em; }
