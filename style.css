@@ -182,6 +182,10 @@
 
 .course-code { font-weight: bold; margin: 4px 0; }
 .course-title { margin: 4px 0; font-size: 0.9em; }
+.course-credit-othe { font-size: 0.9em; color: #00aa00; margin: 4px 0; font-style: italic; }
+.course-credit-clab { font-size: 0.9em; color: #cedd00; margin: 4px 0; font-style: italic; }
+.course-credit-olab { font-size: 0.9em; color: #008fff; margin: 4px 0; font-style: italic; }
+.course-credit-fydp { font-size: 0.9em; color: #cc0000; margin: 4px 0; font-style: italic; }
 .course-hp { font-size: 0.8em; color: #DDD; margin: 4px 0; font-style: italic; }
 
 
