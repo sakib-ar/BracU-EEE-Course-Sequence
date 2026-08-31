@@ -187,3 +187,14 @@ function toggleStrikethrough(element) {
         observer.observe(footer);
     }
 });
+
+/* Seamless Scrolling Ticker Duplicator */
+document.addEventListener('DOMContentLoaded', () => {
+    const tickerContent = document.getElementById('ticker-content');
+    if (tickerContent) {
+        // Clone the original text span
+        const originalSpan = tickerContent.innerHTML;
+        // Inject the clone right next to the original
+        tickerContent.innerHTML = originalSpan + originalSpan; 
+    }
+});
