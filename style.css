@@ -160,7 +160,7 @@
 }
 
 .course-box {
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 6px;
   padding: 10px;
   color: white;
@@ -169,14 +169,14 @@
   box-sizing: border-box;
 }
 
-.course-box.eee-core:hover { background-color: #198c3b; }              /* EEE Core Course Info Style*/
+.course-box.eee-core:hover { background-color: #006600; }              /* EEE Core Course Info Style*/
 .course-box.gened-mandatory:hover { background-color: #c04747; }       /* GenEd Mandatory Course Info Style*/
 .course-box.stream-3:hover { background-color: #886c1e; }              /* GenEd Stream-3 Course Info Style*/
 .course-box.stream-4:hover { background-color: #304889; }              /* GenEd Stream-4 Course Info Style*/
 .course-box.stream-5:hover { background-color: #744893; }              /* GenEd Stream-5 Course Info Style*/
-.course-box.eee-power:hover { background-color: #8f8f00; }             /* Major 1: Power Course Info Style*/
+.course-box.eee-power:hover { background-color: #7b642b; }             /* Major 1: Power Course Info Style*/
 .course-box.eee-electronics:hover { background-color: #000090; }       /* Major 2: Electronics Course Info Style*/
-.course-box.eee-communication:hover { background-color: #008200; }     /* Major 3: Communication Course Info Style*/
+.course-box.eee-communication:hover { background-color: #006600; }     /* Major 3: Communication Course Info Style*/
 .course-box.eee-robotics:hover { background-color: #800000; }          /* Major 4: Robotics Course Info Style*/
 .course-box.eee-interdisciplinary:hover { background-color: #555555; } /* Interdisciplinary Course Info Style*/
 
@@ -186,7 +186,7 @@
 .course-credit-clab { font-size: 0.9em; color: #cedd00; margin: 4px 0; font-style: italic; }
 .course-credit-olab { font-size: 0.9em; color: #008fff; margin: 4px 0; font-style: italic; }
 .course-credit-fydp { font-size: 0.9em; color: #cc0000; margin: 4px 0; font-style: italic; }
-.course-hp { font-size: 0.8em; color: #DDD; margin: 4px 0; font-style: italic; }
+.course-hp { font-size: 0.8em; color: #dddddd; margin: 4px 0; font-style: italic; }
 
 
 /* 5. SITE FOOTER & ICON GLOW ANIMATIONS */
@@ -409,5 +409,45 @@
       padding: 8px 16px;
       white-space: normal; /* Allows text wrap on super narrow screens */
       max-width: 90vw;
+  }
+}
+
+/* 8. SCROLLING TEXT TICKER */
+.scrolling-ticker {
+  width: 100%;
+  overflow: hidden;
+  background-color: #03192d; /* Matches your header cells */
+  color: #e0e6ed;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+  font-family: sans-serif;
+  font-size: 0.9rem;
+}
+
+.ticker-content {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-left 25s linear infinite; /* Scroll speed */
+}
+
+.scrolling-ticker:hover .ticker-content {
+  animation-play-state: running; /* pause -> Pauses the scrolling when hovering ; running -> non-stop */
+}
+
+.ticker-content span {
+  padding-right: 50px; /* Spacing between the looping sentences */
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Shifts content 50% for a seamless loop */
+}
+
+@media screen and (max-width: 768px) {
+  .scrolling-ticker {
+      font-size: 0.75rem;
+      padding: 6px 0;
   }
 }
