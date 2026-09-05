@@ -1,4 +1,4 @@
-# BRACU-EEE-Course-Sequence
+# ![Project Diagram](assets/site-logo-small.png) BRACU-EEE-Course-Sequence
 Made using BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake from Spring 2020 and onwards)<br>
 
 > [!WARNING]
