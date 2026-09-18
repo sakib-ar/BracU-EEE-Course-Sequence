@@ -13,12 +13,11 @@
 		<div class="scrolling-ticker">
 			<div class="ticker-content" id="ticker-content">
 				<span>
-					📢 <strong>UPDATE:</strong> Fall 2026 Pre-Registration Phase-2 Ended. &nbsp;&nbsp;&nbsp;
+					📢 <strong>DEV:</strong> Auto-save is now enabled! &nbsp;&nbsp;&nbsp;
 					📌 <strong>NEW:</strong> HUM104, HUM110 & HUM201 added to Stream-3. &nbsp;&nbsp;&nbsp; 
 					🔗 <strong>2027 Elective Offering:</strong> The tentative elective course offering for 2027 is now available. 
 					<a href="elective-info/Tentative Elective Course Offering Plan for Next Year 2027.pdf" target="_blank">
-						Click here to view</a>. &nbsp;&nbsp;&nbsp; 
-					 
+						Click here to view</a>. &nbsp;&nbsp;&nbsp;  
 				</span>
 			</div>
 		</div>
@@ -30,6 +29,9 @@
 					<span class="dash-item"><span class="dash-icon">👆🏼</span><b>Click:&nbsp;</b>Mark Completed</span>
 					<span class="dash-item"><span class="dash-icon">✔️</span><b>Tick:&nbsp;</b>Unlocked</span>
 				</div>
+				
+				<button id="reset-btn" class="reset-btn" onclick="resetProgress()">Reset Progress</button> <!-- Reset Progress Button -->
+
 				<div class="dashboard-divider"></div>
 				<div class="dashboard-group legends">
 					<div class="legend-item">
@@ -1288,6 +1290,18 @@
 				</a>
 			</div>
 		</footer>
+
+		<!-- Custom Reset Confirmation Modal -->
+		<div id="reset-modal" class="modal-overlay">
+			<div class="modal-content">
+				<h3>Reset Progress?</h3>
+				<p>Are you sure you want to clear all your completed courses?</p>
+				<div class="modal-buttons">
+					<button class="modal-btn cancel-btn" onclick="closeResetModal()">Cancel</button>
+					<button class="modal-btn confirm-btn" onclick="confirmReset()">RESET</button>
+				</div>
+			</div>
+		</div>
 
 		<script src="script.js"></script>
 
