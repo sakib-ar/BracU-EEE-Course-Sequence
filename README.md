@@ -31,6 +31,10 @@ Made using BRACU BSEEE Version V3 Recommended Course Sequence (Student Intake fr
   - The notification acts as a helpful warning, showing you a clean, comma-separated list of all the missing prerequisite courses you need to complete first.
   - It also blocks you from breaking the path backward by warning you if you try to undo a foundational course that a completed future course depends on.
 
+- **🔄 Auto-Save and Reset Progress :**
+  - There is no need to save anything manually. Your completed courses are saved automatically.
+  - If you want to clear all your completed courses, simply click the Reset Progress button.
+
 ---
 
 ### 📂 Course List Organization
