@@ -112,6 +112,9 @@ function toggleStrikethrough(element) {
     // Toggle completion status if validation passes
     element.classList.toggle('strikethrough');
     updatePrereqStatus();
+
+    // Trigger auto-save whenever a cell is successfully toggled
+    saveProgress();
 }
 
     //  Mouse hover highlighting
@@ -155,7 +158,7 @@ function toggleStrikethrough(element) {
         });
     });
 
-    document.addEventListener('DOMContentLoaded', updatePrereqStatus);
+    document.addEventListener('DOMContentLoaded', loadProgress); // before: document.addEventListener('DOMContentLoaded', updatePrereqStatus);
 	
 	document.addEventListener('DOMContentLoaded', () => {
         const icons = document.querySelectorAll('.icon-link');
@@ -197,4 +200,59 @@ document.addEventListener('DOMContentLoaded', () => {
         // Inject the clone right next to the original
         tickerContent.innerHTML = originalSpan + originalSpan; 
     }
+    // Close the modal when clicking outside the modal content box
+    document.getElementById('reset-modal').addEventListener('click', function(event) {
+        // Check if the actual element clicked was the dark overlay itself
+        if (event.target === this) {
+            closeResetModal();
+        }
 });
+});
+
+/* Auto-Save, Load & Reset */
+function saveProgress() {
+    const completedCourses = [];
+    // Find all elements with the strikethrough class
+    document.querySelectorAll('.course.strikethrough').forEach(course => {
+        completedCourses.push(course.id);
+    });
+    // Save to local storage
+    localStorage.setItem('bracu_eee_progress', JSON.stringify(completedCourses));
+}
+
+function loadProgress() {
+    const savedData = localStorage.getItem('bracu_eee_progress');
+    if (savedData) {
+        const completedCourseIds = JSON.parse(savedData);
+        completedCourseIds.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.add('strikethrough');
+        });
+    }
+    // Update UI tick marks based on loaded data
+    updatePrereqStatus(); 
+}
+
+// Opens the custom modal
+function resetProgress() {
+    document.getElementById('reset-modal').classList.add('active');
+}
+
+// Closes the custom modal without doing anything
+function closeResetModal() {
+    document.getElementById('reset-modal').classList.remove('active');
+}
+
+// Executes the reset when "Yes" is clicked
+function confirmReset() {
+    localStorage.removeItem('bracu_eee_progress'); // Clear local storage
+    
+    document.querySelectorAll('.course.strikethrough').forEach(course => {
+        course.classList.remove('strikethrough'); // Remove visual strikethroughs
+    });
+    
+    updatePrereqStatus(); // Update the UI logic
+    closeResetModal(); // Close the modal and notify the user
+    
+    showToast("🔄 Progress reset successfully.");
+}
